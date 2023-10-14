@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RateMasters>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>193</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>194</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94A</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94B</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4BB</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>30</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>2,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>1,1</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>1,1</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94C</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94D</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94F</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94G</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94H</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10,2</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94I</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94J</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>10</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>94L</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>F</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>A</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>T</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>B</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>L</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>J</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>G</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>P</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>H</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>
+		<Section>4EE</Section>
+		<DeducteeStatus>Z</DeducteeStatus>
+		<Rate>20</Rate>
+	</RateMaster>
+	<RateMaster>	
+		<Section>A</Section>
+		<DeducteeStatus>C</DeducteeStatus>
+		<Rate>1</Rate>
+	</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>A</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>B</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>C</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>D</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>1</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>E</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>F</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>G</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2.5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>H</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>5</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>I</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>195</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>2</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IA</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>C</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>F</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>A</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>T</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>B</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>L</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>J</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>G</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>P</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>H</DeducteeStatus>
+	<Rate>10</Rate>
+</RateMaster>	
+<RateMaster>	
+	<Section>4IB</Section>
+	<DeducteeStatus>Z</DeducteeStatus>
+	<Rate>20</Rate>
+</RateMaster>
+</RateMasters>

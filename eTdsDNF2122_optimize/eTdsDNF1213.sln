@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "eTdsDNF1213", "eTdsDNF1213.exe", "{5E611CFA-CDA7-4CEE-A18E-D8191319BCB7}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Ashish Working Dir\TFS\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1314\DNF\bin\Debug\eTdsDNF1213.exe
+		RemoteMachine = U0160049-TPD-A
+		StartingDirectory = C:\Ashish Working Dir\TFS\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1314\DNF\bin\Debug
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E611CFA-CDA7-4CEE-A18E-D8191319BCB7}.Debug|x86.ActiveCfg = Debug|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

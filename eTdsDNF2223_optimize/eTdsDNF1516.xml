@@ -1,0 +1,114 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+eTdsDNF1516
+</name>
+</assembly>
+<members>
+<member name="P:eTdsDNF1516.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.Bar">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.bullet_blue_new">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.Button">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.DNF">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF_Buy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF_Buy1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF_Buy11">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF11">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF12">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF13">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.eTdsDNF14">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.etdsndf">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.etdsndf1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.etdsndf11">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.etdsndf12">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.etdsndf2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.Process">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.web1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:eTdsDNF1516.My.Resources.Resources.web2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:eTdsDNF1516.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:eTdsDNF1516.IVRStatusSvc.getITRVStatusRequest.PAN">
+	<remarks/>
+</member><member name="P:eTdsDNF1516.IVRStatusSvc.getITRVStatusRequest.AssessmentYear">
+	<remarks/>
+</member><member name="T:eTdsDNF1516.IVRStatusSvc.getITRVStatusRequest">
+	<remarks/>
+</member><member name="P:eTdsDNF1516.IVRStatusSvc.getITRVStatusResponse.result">
+	<remarks/>
+</member><member name="T:eTdsDNF1516.IVRStatusSvc.getITRVStatusResponse">
+	<remarks/>
+</member>
+</members>
+</doc>

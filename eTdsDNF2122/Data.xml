@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <CustInfo>
+    <Field>Customer Name</Field>
+    <Value>Divyesh</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Company Name</Field>
+    <Value>Divyesh</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Phone No</Field>
+    <Value>40557000</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Mobile No</Field>
+    <Value>9898989898</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Email</Field>
+    <Value>Divyesh.joshi@thomsonreuters.com</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Customer Type</Field>
+    <Value>Private Corporation</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>DongleSrNo</Field>
+    <Value>099990</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Product</Field>
+    <Value>eTdsDNF</Value>
+  </CustInfo>
+  <CustInfo>
+    <Field>Year</Field>
+    <Value>2013-14</Value>
+  </CustInfo>
+</DocumentElement>
