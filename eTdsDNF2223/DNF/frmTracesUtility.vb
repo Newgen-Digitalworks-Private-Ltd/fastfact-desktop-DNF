@@ -74,20 +74,52 @@ Public Class frmTracesUtility
             Dim fs As FileStream = File.Create(fileName)
             fs.Close()
 
+            'Using writer As New StreamWriter(fileName)
+            '    writer.Write("Pan" & Environment.NewLine)
+
+            '    ' Assuming data_Structure is a DataSet or DataTable
+            '    Dim dtPanFiltered As DataTable = data_Structure.Tables("Deductee$").Copy()
+            '    Dim distinctRows = (From dRow As DataRow In dtPanFiltered.Rows
+            '                        Select dRow(5)).Distinct().ToList()
+
+            '    For i As Integer = 0 To distinctRows.Count - 1
+            '        Dim s As String = distinctRows(i).ToString()
+            '        writer.Write(s & Environment.NewLine)
+            '    Next
+
+            '    ' MessageBox.Show("Data Saved Successfully", "eTdsWizard", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'End Using
+
+            Dim dtTempView As New DataView(dsMain.Tables("DeducteeDetails"))
+
+            intCountOfValidPAN = 0
+            dtTempView.Sort = "PAN"
+            dtTempView.RowFilter = "IsPANValidationReq = True"
+            Application.DoEvents()
+            dtTempPAN = dtTempView.ToTable("PANValid", True, "PAN") ' For selecting Distinct PAN into data table
+
+            ''Date:06/07/2020, Name:Bhaskaran N, Description: To Megre Distinct PAN into DD from SD for Validation <start>
+            'dtTempViewSalaryDetails.Sort = "PAN"
+            'dtTempViewSalaryDetails.RowFilter = " PAN <> 'PANNOTAVBL' " 'Ver 7.03-REQ816 start
+
+            'Dim dt As DataTable = dtTempViewSalaryDetails.ToTable("PANValid", True, "PAN")
+
+
             Using writer As New StreamWriter(fileName)
                 writer.Write("Pan" & Environment.NewLine)
+                Dim dt As DataTable = dtTempView.ToTable("PANValid", True, "PAN")
+                If dt.Rows.Count > 0 Then
+                    'dtTempPAN.Merge(dt)
+                    'dtTempPAN = dtTempPAN.DefaultView.ToTable(True, "PAN")
 
-                ' Assuming data_Structure is a DataSet or DataTable
-                Dim dtPanFiltered As DataTable = data_Structure.Tables("Deductee$").Copy()
-                Dim distinctRows = (From dRow As DataRow In dtPanFiltered.Rows
-                                    Select dRow(5)).Distinct().ToList()
+                    For i As Integer = 0 To dt.Rows.Count - 1
+                        Dim s As String = dt.Rows(i).Item(0).ToString()
+                        writer.Write(s & Environment.NewLine)
+                    Next
 
-                For i As Integer = 0 To distinctRows.Count - 1
-                    Dim s As String = distinctRows(i).ToString()
-                    writer.Write(s & Environment.NewLine)
-                Next
-
-                ' MessageBox.Show("Data Saved Successfully", "eTdsWizard", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'Dim s As String = dt.Rows.Item[0]
+                    'writer.Write(s & Environment.NewLine)
+                End If
             End Using
         Catch ex As Exception
             Throw ex
@@ -97,7 +129,8 @@ Public Class frmTracesUtility
         Try
             Dim result As String = Nothing
             Dim qtid As String
-            qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & " " & txtuserid.Text & " " & txtpwd.Text & " " & lbltan.Text
+            'qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & " " & txtuserid.Text & " " & txtpwd.Text & " " & lbltan.Text
+            qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & "   " & " " & lbltan.Text
 
             Dim epubCheckPath As String = Application.StartupPath & "\traces\traces.jar"
             Dim arguments As String = "-jar " & epubCheckPath & " " & qtid
@@ -255,10 +288,12 @@ Public Class frmTracesUtility
     Private Sub loadtan()
         ' Dim appfile As String = Application.StartupPath & "\\traces\\26qq2.xls"
         ' Dim appfile As String = Application.StartupPath & "\\traces request for 26q q2.xls"
-        Dim appfile As String = lblpath.Text
+        'Dim appfile As String = lblpath.Text
 
-        data_Structure = Import(appfile)
-        gettan()
+        'data_Structure = Import(appfile)
+        'gettan()
+
+        lbltan.Text = TANDeductor
     End Sub
     Public Shared Function Import(ByVal path As String) As DataSet
         Dim dataStructure As New DataSet()

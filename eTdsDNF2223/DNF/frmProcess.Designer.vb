@@ -76,7 +76,6 @@ Partial Class frmProcess
         Me.cmdShowData = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.Userstatus1 = New eTdsDNF2223.Userstatus()
         Me.pctProcess1 = New System.Windows.Forms.PictureBox()
         Me.pctProcess2 = New System.Windows.Forms.PictureBox()
         Me.pctFileWrong = New System.Windows.Forms.PictureBox()
@@ -86,6 +85,7 @@ Partial Class frmProcess
         Me.pctPANWrong = New System.Windows.Forms.PictureBox()
         Me.pctForeCastCorrect = New System.Windows.Forms.PictureBox()
         Me.pctPANCorrect = New System.Windows.Forms.PictureBox()
+        Me.Userstatus1 = New eTdsDNF2223.Userstatus()
         CType(Me.pbFNF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctSummaryCorrect, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctProcess3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,7 +326,7 @@ Partial Class frmProcess
         'lblPanProcess1
         '
         Me.lblPanProcess1.AutoSize = True
-        Me.lblPanProcess1.Location = New System.Drawing.Point(289, 246)
+        Me.lblPanProcess1.Location = New System.Drawing.Point(289, 249)
         Me.lblPanProcess1.Name = "lblPanProcess1"
         Me.lblPanProcess1.Size = New System.Drawing.Size(51, 14)
         Me.lblPanProcess1.TabIndex = 162
@@ -338,7 +338,7 @@ Partial Class frmProcess
         '
         Me.lblPanProcess.AutoSize = True
         Me.lblPanProcess.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPanProcess.Location = New System.Drawing.Point(289, 245)
+        Me.lblPanProcess.Location = New System.Drawing.Point(292, 249)
         Me.lblPanProcess.Name = "lblPanProcess"
         Me.lblPanProcess.Size = New System.Drawing.Size(53, 15)
         Me.lblPanProcess.TabIndex = 163
@@ -666,15 +666,6 @@ Partial Class frmProcess
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = False
         '
-        'Userstatus1
-        '
-        Me.Userstatus1.BackgroundImage = CType(resources.GetObject("Userstatus1.BackgroundImage"), System.Drawing.Image)
-        Me.Userstatus1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Userstatus1.Location = New System.Drawing.Point(-5, 443)
-        Me.Userstatus1.Name = "Userstatus1"
-        Me.Userstatus1.Size = New System.Drawing.Size(800, 98)
-        Me.Userstatus1.TabIndex = 156
-        '
         'pctProcess1
         '
         Me.pctProcess1.Image = CType(resources.GetObject("pctProcess1.Image"), System.Drawing.Image)
@@ -758,6 +749,15 @@ Partial Class frmProcess
         Me.pctPANCorrect.Size = New System.Drawing.Size(35, 36)
         Me.pctPANCorrect.TabIndex = 141
         Me.pctPANCorrect.TabStop = False
+        '
+        'Userstatus1
+        '
+        Me.Userstatus1.BackgroundImage = CType(resources.GetObject("Userstatus1.BackgroundImage"), System.Drawing.Image)
+        Me.Userstatus1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Userstatus1.Location = New System.Drawing.Point(-5, 443)
+        Me.Userstatus1.Name = "Userstatus1"
+        Me.Userstatus1.Size = New System.Drawing.Size(800, 98)
+        Me.Userstatus1.TabIndex = 156
         '
         'frmProcess
         '

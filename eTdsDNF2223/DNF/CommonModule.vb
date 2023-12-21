@@ -50,6 +50,7 @@ Public Module CommonModule
     Public strPanStatus As String = ""
     Public blnNextFile As Boolean = False
     Public intCntInvalidPan As Int64
+    Public actCntInvalidPan As Int64
     Public strDNFExcelFile As String
     Public blnFileFailure As Boolean = False
     Public strProbshortDedAmt As String
@@ -92,6 +93,7 @@ Public Module CommonModule
     'Dim strValidPANListFilePath As String = Application.StartupPath & "\Interop.VPL.dll"
     'Dim strValidPANListFilePath As String = Application.StartupPath & "\Interop.VPL.sys"
     Dim strValidPANListFilePath As String = Application.StartupPath & "\Interop.VPL.txt"
+
     Dim strThreadSleepValue As String
     'Ver 4.042-QC?? end
     Public Const dcmDelayeDepositIntrstTill30062010 As Decimal = 0.12
@@ -103,6 +105,8 @@ Public Module CommonModule
     Public blnIsProductRegistered As Boolean = True
     Public strActivationFileName As String = Application.StartupPath & "\Interop.eTds.Config"
     'Ver 1.01-E585 End
+
+    Public strValidPANListFileTracesPath As String = Application.StartupPath & "\traces\InvalidPAN.csv"
 
     'Ver 2.01-REQ233 Start
     Public intFHColumnCount As Integer

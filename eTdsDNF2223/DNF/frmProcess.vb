@@ -1,7 +1,16 @@
-﻿Imports System.Data
-Imports System.Net
-Imports System.Text
+﻿Imports System
 Imports System.IO
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Resources
+Imports System.Reflection
+Imports System.Diagnostics
+Imports System.IO.Compression
+Imports System.Text
+Imports Newtonsoft.Json
+Imports System.Data.OleDb
+Imports Newtonsoft.Json.Linq
+
 Public Class frmProcess
     Private Sub frmProcess_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         If blnFormClose = True Then
@@ -154,37 +163,80 @@ Public Class frmProcess
             Dim Delgt As DoPanValidation
             'Ver 4.042-QC?? start
             'Delgt = AddressOf PANVerificationLatest
-            Delgt = AddressOf PanVerification
-            'Ver 4.042-QC?? end
-            Delgt.Invoke()
-
-            Do While blnPANDelegate = False
-                Application.DoEvents()
-                lblPanProcess.Text = strPanProcess
-                lblPanStatus.Text = "Status  : " & strPanStatus
-            Loop
+            create_pan()
+            'readcsv()
+            'lblPanProcess.Text = strPanProcess
+            'lblPanStatus.Text = "Status  : " & strPanStatus
 
 
-            If blnPANVerification = True Then
-                pctPANWrong.Visible = True
-                pctPANCorrect.Visible = False
 
-                If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
-                    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
-                Else
-                    lblPanStatus.Text = "Status  :  PAN verification cancelled."
-                End If
+            'Dim filename As String
+            'If File.Exists(Application.StartupPath & "\TRACES.exe") = True Then
+            '    filename = Application.StartupPath & "\" & TANDeductor &
+            '                "_" & dtBH.Rows(0)(4) & "_" & dtBH.Rows(0)(17) & "_" & dtBH.Rows(0)(16) & "_" & Today.Day & Today.Month & Today.Year & ".xls"
+            '    frm.lblpath.Text = filename
+            '    frm.ShowDialog()
+            '    File.Copy(Application.StartupPath & "\Default-Notice-Forecaster.sys", filename, True)
+            '    strDNFExcelFile = filename
+            '    Call CallProcessAndWait(Application.StartupPath & "\TRACES.exe", """~" & strFilePath & "~" & strDNFExcelFile & "~~~~~" & TANDeductor & "~DNF~""")
+            'Else
+            '    MessageBox.Show("TRACES.exe is not found in application folder.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '    Exit Sub
+            'End If
+            'ReadExcelPANVerification(strDNFExcelFile)
+            ''ReadExcelPANVerification("C:\Gajanan\TFS New\FFCS Projects\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1516\DNF\bin\Debug\MUML06324D_26Q_Q2_201516_13102015.xls")
+
+            'Delgt = AddressOf PanVerification
+            ''Ver 4.042-QC?? end
+            'Delgt.Invoke()
+
+            'Do While blnPANDelegate = False
+            '    Application.DoEvents()
+            '    lblPanProcess.Text = strPanProcess
+            '    lblPanStatus.Text = "Status  : " & strPanStatus
+
+            'Loop
+
+
+            If blnPANVerification = False Then
+
+                'pctPANWrong.Visible = True
+                'pctPANCorrect.Visible = False
+
+                'If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+                '    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
+                'Else
+                lblPanStatus.Text = "Status  :  PAN verification cancelled."
+                'End If
 
                 'lblPanStatus.Text = "Status  : PAN verification cancelled."
             Else
-                pctPANWrong.Visible = False
-                pctPANCorrect.Visible = True
+                'pctPANWrong.Visible = False
+                'pctPANCorrect.Visible = True
 
-                If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
-                    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
-                Else
-                    lblPanStatus.Text = "Status  :  PAN verification completed."
+                'If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+                '    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
+                'Else
+                If actCntInvalidPan > 0 Then
+                    lblPanProcess1.Text = ""
+                    lblPanProcess.Visible = True
+                    lblPanProcess.Text = actCntInvalidPan & " PAN's Verification Completed."
                 End If
+                If intCntInvalidPan > 0 Then
+                    lblPanProcess1.Visible = True
+                    lblPanProcess.Text = ""
+                    lblPanProcess.Visible = False
+                    lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in Traces."
+                    If blnDemoVersion = True Then
+                        lblPanProcess1.Enabled = False
+                    Else
+                        lblPanProcess1.Enabled = True
+                    End If
+                Else
+                    lblPanProcess1.Text = ""
+                End If
+                lblPanStatus.Text = "Status  :  PAN verification completed."
+                'End If
 
                 'lblPanStatus.Text = "Status  :  PAN verification completed."
             End If
@@ -192,17 +244,18 @@ Public Class frmProcess
             pctProcess3.Visible = False
         End If
 
-        lblPanProcess1.Visible = False
+        'lblPanProcess1.Visible = False
 
-        If blnPANCount = True Then
-            lblPanProcess.Visible = True
-        Else
-            lblPanProcess.Visible = False
-        End If
+        'If blnPANCount = True Then
+        '    lblPanProcess.Visible = True
+        'Else
+        '    lblPanProcess.Visible = False
+        'End If
 
         If intCntInvalidPan > 0 Then
             lblPanProcess1.Visible = True
-            lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in ITD."
+            lblPanProcess.Visible = False
+            lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in Traces."
             If blnDemoVersion = True Then
                 lblPanProcess1.Enabled = False
             Else
@@ -210,23 +263,24 @@ Public Class frmProcess
             End If
         Else
             lblPanProcess1.Text = ""
+            lblPanProcess1.Visible = False
         End If
 
-        If intIgnoredPANList > 0 Then
-            If File.Exists(strIgnoredPANListFilePath) = True Then
-                lblIgnoredPANList.Visible = True
-            End If
+        'If intIgnoredPANList > 0 Then
+        '    If File.Exists(strIgnoredPANListFilePath) = True Then
+        '        lblIgnoredPANList.Visible = True
+        '    End If
 
-            lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
-            If blnDemoVersion = True Then
-                lblIgnoredPANList.Enabled = False
-            Else
-                lblIgnoredPANList.Enabled = True
-            End If
-        Else
-            lblIgnoredPANList.Text = ""
-            lblIgnoredPANList.Visible = False
-        End If
+        '    lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
+        '    If blnDemoVersion = True Then
+        '        lblIgnoredPANList.Enabled = False
+        '    Else
+        '        lblIgnoredPANList.Enabled = True
+        '    End If
+        'Else
+        '    lblIgnoredPANList.Text = ""
+        '    lblIgnoredPANList.Visible = False
+        'End If
 
         Application.DoEvents()
         If blnInternetConnectionFailed = True Then
@@ -327,65 +381,260 @@ Public Class frmProcess
 
         Application.DoEvents()
     End Sub
+
+    Private Sub create_pan()
+        Try
+            Dim fileName As String = Application.StartupPath & "\traces\pan.txt"
+
+            ' Check if the file already exists
+            If File.Exists(fileName) Then
+                File.Delete(fileName)
+            End If
+
+            Dim filerpt As String = Application.StartupPath & "\traces\report.csv"
+            If File.Exists(filerpt) Then
+                File.Delete(filerpt)
+            End If
+
+            Dim fs As FileStream = File.Create(fileName)
+            fs.Close()
+
+            Dim dtTempView As New DataView(dsMain.Tables("DeducteeDetails"))
+            Dim dtTempViewSalaryDetails As New DataView(dsMain.Tables("SalaryDetails"))
+
+            intCountOfValidPAN = 0
+            dtTempView.Sort = "PAN"
+            dtTempView.RowFilter = "IsPANValidationReq = True"
+            Application.DoEvents()
+            dtTempPAN = dtTempView.ToTable("PANValid", True, "PAN") ' For selecting Distinct PAN into data table
+            Dim dt As DataTable = dtTempView.ToTable("PANValid", True, "PAN")
+
+            ' Description: To Megre Distinct PAN into DD from SD for Validation <start>
+            dtTempViewSalaryDetails.Sort = "PAN"
+            dtTempViewSalaryDetails.RowFilter = " PAN <> 'PANNOTAVBL' " 'Ver 7.03-REQ816 start
+            Dim dtsal As DataTable = dtTempViewSalaryDetails.ToTable("PANValid", True, "PAN")
+            If dtsal.Rows.Count > 0 Then
+                dt.Merge(dtsal)
+            End If
+
+
+
+            Using writer As New StreamWriter(fileName)
+                writer.Write("Pan" & Environment.NewLine)
+
+                If dt.Rows.Count > 0 Then
+                    'dtTempPAN.Merge(dt)
+                    'dtTempPAN = dtTempPAN.DefaultView.ToTable(True, "PAN")
+
+                    For i As Integer = 0 To dt.Rows.Count - 1
+                        Dim s As String = dt.Rows(i).Item(0).ToString()
+                        writer.Write(s & Environment.NewLine)
+                    Next
+                End If
+            End Using
+            If dt.Rows.Count > 0 Then
+                'Dim s As String = dt.Rows.Item[0]
+                'writer.Write(s & Environment.NewLine)
+                Dim frm As New frmTraces
+                frm.lbltan.Text = TANDeductor
+                frm.lblPanProcess.Text = dt.Rows.Count
+                frm.lblPanProcess.Visible = False
+                frm.ShowDialog()
+            Else
+                MsgBox("There is no PAN available for Validation")
+            End If
+        Catch ex As Exception
+            'Throw ex
+        End Try
+    End Sub
+    Private Sub readcsv()
+        ' Define the CSV file path
+        Dim fileName As String = Application.StartupPath & "\traces\report.csv"
+
+        ' Read the contents of the CSV file
+        Dim contents As String = File.ReadAllText(fileName)
+
+        ' Remove double quotes from the contents and overwrite the file
+        File.WriteAllText(fileName, contents.Replace("""", ""))
+
+        lblPanProcess.Text = strPanProcess
+        lblPanStatus.Text = "Status  : " & strPanStatus
+
+        Dim csvdt As DataTable
+        Dim mfile As File
+        If mfile.Exists(Application.StartupPath & "\traces\report.csv") = True Then
+            Dim strPath As String = IO.Path.GetDirectoryName(Application.StartupPath & "\traces\report.csv")
+            Dim strFile As String = IO.Path.GetFileName(Application.StartupPath & "\traces\report.csv")
+            csvdt = getcsvtable(strPath)
+        Else
+            MsgBox("Please check ...", vbCritical, "")
+        End If
+        csvdt.Columns.Add("ActiveStatus")
+
+        'csvdt.[Select]("Status = 'Active'").ToList().ForEach(Sub(ByVal name As DataRow)
+        '                                                         name.SetField(Of String)(1, "Apple")
+        '                                                         Console.WriteLine(name.Field(Of String)("Client"))
+        '                                                     End Sub)
+
+        csvdt.Select("Status = 'Active'").ToList().ForEach(Sub(row As DataRow)
+                                                               row.SetField(Of String)("ActiveStatus", "Apple")
+                                                               Console.WriteLine(row.Field(Of String)("Client"))
+                                                           End Sub)
+
+
+
+
+
+    End Sub
+    Public Function getcsvtable(ByVal csvfilepath As String) As DataTable
+        Dim objDs As New DataSet()
+        Try
+
+            Dim strPath As String = IO.Path.GetDirectoryName(Application.StartupPath & "\traces\report.csv")
+            Dim strFile As String = IO.Path.GetFileName(Application.StartupPath & "\traces\report.csv")
+
+            'Create a connection object
+            Using objConn As New OleDbConnection($"Provider= Microsoft.Jet.OLEDB.4.0;Data Source={strPath};Extended Properties=""Text;""")
+                objConn.Open()
+                'create a command object
+                Using objCmdSelect As New OleDbCommand($"Select * FROM {strFile}", objConn)
+                    'create an adapter object
+                    Using objAdapter1 As New OleDbDataAdapter()
+                        objAdapter1.SelectCommand = objCmdSelect
+                        'fill the dataset using the adapter
+
+                        objAdapter1.Fill(objDs)
+
+                        'DataGridView1.DataSource = objDs.Tables(0)
+
+                        Return objDs.Tables(0)
+
+                    End Using
+                End Using
+            End Using
+
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdShowData.Click
         frmShowData.Show()
     End Sub
     Private Sub lblPanProcess1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblPanProcess1.LinkClicked
-        Dim ts As StreamWriter
-        Dim dtTmpInvalidPAN As DataTable
-        Dim mStr As String
-        Dim dtTempView As New DataView(dtDD)
-        'Ver 5.05-REQ641 start
-        Dim dtTempviewSalary As New DataView(dtSD) 'Jitendrax1
-        'Ver 5.05-REQ641 end
-        Dim ExlAppln As New Object
-        Dim ExlBook As New Object
+        invalidpan()
+        'Dim ts As StreamWriter
+        'Dim dtTmpInvalidPAN As DataTable
+        'Dim mStr As String
+        'Dim dtTempView As New DataView(dtDD)
+        ''Ver 5.05-REQ641 start
+        'Dim dtTempviewSalary As New DataView(dtSD) 'Jitendrax1
+        ''Ver 5.05-REQ641 end
+        'Dim ExlAppln As New Object
+        'Dim ExlBook As New Object
 
-        Try
+        'Try
 
-            ExlAppln = CreateObject("Excel.Application")
+        '    ExlAppln = CreateObject("Excel.Application")
 
-            ts = New StreamWriter(Application.StartupPath & "\InvalidPans.xls")
+        '    ts = New StreamWriter(Application.StartupPath & "\InvalidPans.xls")
 
-            mStr = ""
-            mStr = "PAN" & Chr(9) & "Name"
+        '    mStr = ""
+        '    mStr = "PAN" & Chr(9) & "Name"
 
 
-            dtTempView.RowFilter = "PANStatus ='I' and DeducteeStatus='Z'"
-            dtTmpInvalidPAN = dtTempView.ToTable("InValidPANValid", True, "PAN", "Name")
-            mStr = "Invalid PAN in Deductee"
-            mStr = mStr & vbCrLf & "PAN" & Chr(9) & "Name"
-            For k As Integer = 0 To dtTmpInvalidPAN.Rows.Count - 1
-                mStr = mStr & vbCrLf & dtTmpInvalidPAN.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN.Rows(k)("Name").ToString
-            Next
+        '    dtTempView.RowFilter = "PANStatus ='I' and DeducteeStatus='Z'"
+        '    dtTmpInvalidPAN = dtTempView.ToTable("InValidPANValid", True, "PAN", "Name")
+        '    mStr = "Invalid PAN in Deductee"
+        '    mStr = mStr & vbCrLf & "PAN" & Chr(9) & "Name"
+        '    For k As Integer = 0 To dtTmpInvalidPAN.Rows.Count - 1
+        '        mStr = mStr & vbCrLf & dtTmpInvalidPAN.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN.Rows(k)("Name").ToString
+        '    Next
 
-            '==>Jitendra
-            'Ver 5.05-REQ641 start
-            dtTempviewSalary.RowFilter = "PANValid='N'"
-            dtTmpInvalidPAN = dtTempviewSalary.ToTable("InValidPANValid", True, "PAN", "Name")
-            mStr = mStr & vbCrLf
-            mStr = mStr & vbCrLf
-            mStr = mStr & vbCrLf & "Invalid PAN in Salary"
-            mStr = mStr & vbCrLf & "PAN" & Chr(9) & "Name"
-            For k As Integer = 0 To dtTmpInvalidPAN.Rows.Count - 1
-                mStr = mStr & vbCrLf & dtTmpInvalidPAN.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN.Rows(k)("Name").ToString
-            Next
-            'Ver 5.05-REQ641 end 
-            ts.WriteLine(mStr)
-            ts.Flush()
-            ts.Dispose()
-            dtTmpInvalidPAN.Dispose()
-            dtTempView.Dispose()
-            'Ver 5.05-REQ641 start 
-            dtTempviewSalary.Dispose()
-            'Ver 5.05-REQ641 end 
-            mStr = ""
-        Catch ex As Exception
+        '    '==>Jitendra
+        '    'Ver 5.05-REQ641 start
+        '    dtTempviewSalary.RowFilter = "PANValid='N'"
+        '    dtTmpInvalidPAN = dtTempviewSalary.ToTable("InValidPANValid", True, "PAN", "Name")
+        '    mStr = mStr & vbCrLf
+        '    mStr = mStr & vbCrLf
+        '    mStr = mStr & vbCrLf & "Invalid PAN in Salary"
+        '    mStr = mStr & vbCrLf & "PAN" & Chr(9) & "Name"
+        '    For k As Integer = 0 To dtTmpInvalidPAN.Rows.Count - 1
+        '        mStr = mStr & vbCrLf & dtTmpInvalidPAN.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN.Rows(k)("Name").ToString
+        '    Next
+        '    'Ver 5.05-REQ641 end 
+        '    ts.WriteLine(mStr)
+        '    ts.Flush()
+        '    ts.Dispose()
+        '    dtTmpInvalidPAN.Dispose()
+        '    dtTempView.Dispose()
+        '    'Ver 5.05-REQ641 start 
+        '    dtTempviewSalary.Dispose()
+        '    'Ver 5.05-REQ641 end 
+        '    mStr = ""
+        'Catch ex As Exception
 
-        End Try
-
-        Process.Start(Application.StartupPath & "\InvalidPans.xls")
+        'End Try
+        'Process.Start(Application.StartupPath & "\InvalidPans.xls")
     End Sub
+    Public Function invalidpan()
+        'Dim ts As StreamWriter
+        'Dim dtTmpInvalidPAN As DataTable
+        'Dim mStr As String
+        'Dim dtTempView As New DataView(dtDD)
+        ''Ver 5.05-REQ641 start
+        'Dim dtTempviewSalary As New DataView(dtSD) 'Jitendrax1
+        ''Ver 5.05-REQ641 end
+        'Dim ExlAppln As New Object
+        'Dim ExlBook As New Object
+
+        'Try
+
+        '    ExlAppln = CreateObject("Excel.Application")
+
+        '    ts = New StreamWriter(Application.StartupPath & "\InvalidPans.xls")
+
+        '    mStr = ""
+        '    mStr = "PAN" & Chr(9) & "Name"
+
+
+        '    dtTempView.RowFilter = "PANStatus ='I' and DeducteeStatus='Z'"
+        '    dtTmpInvalidPAN = dtTempView.ToTable("InValidPANValid", True, "PAN", "Name")
+        '    mStr = "Invalid PAN in Deductee"
+        '    mStr = mStr & vbCrLf & "PAN" & Chr(9) & "Name"
+        '    For k As Integer = 0 To dtTmpInvalidPAN.Rows.Count - 1
+        '        mStr = mStr & vbCrLf & dtTmpInvalidPAN.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN.Rows(k)("Name").ToString
+        '    Next
+
+        '    '==>Jitendra
+        '    'Ver 5.05-REQ641 start
+        '    dtTempviewSalary.RowFilter = "PANValid='N'"
+        '    dtTmpInvalidPAN = dtTempviewSalary.ToTable("InValidPANValid", True, "PAN", "Name")
+        '    mStr = mStr & vbCrLf
+        '    mStr = mStr & vbCrLf
+        '    mStr = mStr & vbCrLf & "Invalid PAN in Salary"
+        '    mStr = mStr & vbCrLf & "PAN" & Chr(9) & "Name"
+        '    For k As Integer = 0 To dtTmpInvalidPAN.Rows.Count - 1
+        '        mStr = mStr & vbCrLf & dtTmpInvalidPAN.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN.Rows(k)("Name").ToString
+        '    Next
+        '    'Ver 5.05-REQ641 end 
+        '    ts.WriteLine(mStr)
+        '    ts.Flush()
+        '    ts.Dispose()
+        '    dtTmpInvalidPAN.Dispose()
+        '    dtTempView.Dispose()
+        '    'Ver 5.05-REQ641 start 
+        '    dtTempviewSalary.Dispose()
+        '    'Ver 5.05-REQ641 end 
+        '    mStr = ""
+        'Catch ex As Exception
+
+        'End Try
+        'Process.Start(Application.StartupPath & "\InvalidPans.xls")
+        'Dim strValidPANListFileTracesPath As String = Application.StartupPath & "\traces\InvalidPAN.csv"
+        Process.Start(strValidPANListFileTracesPath)
+    End Function
     Private Sub lblUnmatchchlStatus_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblUnmatchchlStatus.LinkClicked
         Dim ts As StreamWriter
         Dim dtTmpInvalidCSI As DataTable

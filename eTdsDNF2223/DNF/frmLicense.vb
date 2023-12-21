@@ -317,13 +317,11 @@ Public Class frmLicense
                 End
             End If
         Else
-
             If Application.StartupPath <> "C:\eTdsDNF" & ConstStrFYyr Then
                 MessageBox.Show("Please run the application from C:\eTdsDNF" & ConstStrFYyr & " folder.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End
             End If
         End If
-
         Call frmLicense()
 
         'Ver 4.02 start
