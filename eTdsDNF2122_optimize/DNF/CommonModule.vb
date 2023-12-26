@@ -3797,15 +3797,15 @@ skipSD:
     'Ver 4.042-QC?? end
     'Ver 4.042-QC?? start
     Public Function NewPanValidation(strPAN As String) As Integer
-        Dim oPANValidate As New PANValidate
-        blnPANDelegate = False
-        Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/registrationapi/saveEntity", strPAN)
-        blnPANDelegate = True
-        If success Then
-            If Not (oPANValidate.oJsonResult.messages(0).desc = "The PAN entered does not exist. Please retry.") Then Return 1 Else Return 0
-        Else
-            Return 2
-        End If
+        'Dim oPANValidate As New PANValidate
+        'blnPANDelegate = False
+        'Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/registrationapi/saveEntity", strPAN)
+        'blnPANDelegate = True
+        'If success Then
+        '    If Not (oPANValidate.oJsonResult.messages(0).desc = "The PAN entered does not exist. Please retry.") Then Return 1 Else Return 0
+        'Else
+        '    Return 2
+        'End If
     End Function
     Public Function PanValidation(strPAN As String) As Integer
         '0 Invalid PAN

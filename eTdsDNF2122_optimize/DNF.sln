@@ -7,8 +7,6 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNF", "DNF\DNF.vbproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNFSoftLicence", "DNFSoftLicence\DNFSoftLicence.csproj", "{1AA49758-B48B-4CA0-9106-A477B587A214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPAN", "..\PANVerification\PANVerification\CheckPAN.csproj", "{F43D9CEC-1B13-4D16-8936-1E2712883A61}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionCheck", "D:\NewGenOfz\R&D\VersionCheck\VersionCheck.vbproj", "{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewPANValidate", "D:\NewGenOfz\NewPANValidate\NewPANValidate.csproj", "{46D2070A-F368-4F8A-A47B-1D629DA9D129}"
@@ -43,16 +41,6 @@ Global
 		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|x86.ActiveCfg = Release|x86
 		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|x86.Build.0 = Release|x86
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{F43D9CEC-1B13-4D16-8936-1E2712883A61}.Release|x86.ActiveCfg = Release|Any CPU
 		{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
