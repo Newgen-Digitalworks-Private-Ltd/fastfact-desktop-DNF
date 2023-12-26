@@ -11,7 +11,8 @@
     <RootNamespace>DNFSoftLicence</RootNamespace>
     <AssemblyName>DNFSoftLicence</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>%24/FastFacts/FFCS Projects/DotNet Projects/Window Based/eTdsDNF/DNF/eTdsDNF1920/DNFSoftLicence</SccProjectName>
     <SccLocalPath>.</SccLocalPath>
@@ -42,8 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ClosedXML.dll</HintPath>
     </Reference>
-    <Reference Include="eTdsDNF1516">
-      <HintPath>..\DNF\bin\Debug\eTdsDNF1516.exe</HintPath>
+    <Reference Include="eTdsDNF1516, Version=4.0.0.5, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\eTdsDNF1516.exe</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -104,6 +106,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

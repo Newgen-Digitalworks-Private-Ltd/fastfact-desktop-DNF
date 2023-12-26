@@ -1,6 +1,6 @@
 ﻿//using eTDSWizard.WinForm;
 using SoftLicensingLib;
-using SoftLicensingService;
+//using SoftLicensingService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +12,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-using eTdsDNF1516;
+//using eTdsDNF1516;
 using System.Collections; //jk
 using System.Xml;//jkll
 using System.Configuration;
-
-
-
+using SoftLicensingService;
+using eTdsDNF1516;
 
 namespace DNFSoftLicence
 {
