@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNF", "DNF\DNF.vbproj", "{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNFSoftLicence", "DNFSoftLicence\DNFSoftLicence.csproj", "{1AA49758-B48B-4CA0-9106-A477B587A214}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionCheck", "D:\NewGenOfz\R&D\VersionCheck\VersionCheck.vbproj", "{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewPANValidate", "D:\NewGenOfz\NewPANValidate\NewPANValidate.csproj", "{46D2070A-F368-4F8A-A47B-1D629DA9D129}"
@@ -31,16 +29,6 @@ Global
 		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Release|Mixed Platforms.Build.0 = Release|x86
 		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Release|x86.ActiveCfg = Release|x86
 		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Release|x86.Build.0 = Release|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Debug|x86.ActiveCfg = Debug|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Debug|x86.Build.0 = Debug|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|Any CPU.ActiveCfg = Release|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|Mixed Platforms.Build.0 = Release|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|x86.ActiveCfg = Release|x86
-		{1AA49758-B48B-4CA0-9106-A477B587A214}.Release|x86.Build.0 = Release|x86
 		{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49570A53-2B4A-4D23-8D8A-CB2CA2F46886}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
