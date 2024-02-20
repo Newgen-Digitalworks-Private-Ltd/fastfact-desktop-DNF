@@ -282,6 +282,110 @@ Public Class frmProcess
         '    lblIgnoredPANList.Visible = False
         'End If
 
+        ''*************************************************************TdsPac_PanVerification ChallanWithSalary ***********************************************
+
+        'Application.DoEvents()
+        'lblPanProcess1.Text = "Status  :"
+        'lblPanProcess1.Visible = False
+        'intCntInvalidPan = 0
+        'If blnVerifyPANSkip = True Then
+        '    pctPANWrong.Visible = True
+        '    pctPANCorrect.Visible = False
+        '    pctProcess3.Visible = False
+        '    lblPanStatus.Text = lblPanStatus.Text & " Skipped by user."
+
+        'Else
+        '    pctProcess3.Visible = True
+
+        '    Application.DoEvents()
+        '    pctPANWrong.Visible = False
+        '    pctPANCorrect.Visible = False
+
+        '    blnPANDelegate = False
+
+        '    lblPanProcess.Visible = True
+
+        '    Dim Delgt As DoPanValidation
+        '    'Ver 4.042-QC?? start
+        '    'Delgt = AddressOf PANVerificationLatest
+        '    Delgt = AddressOf PanVerification
+        '    'Ver 4.042-QC?? end
+        '    Delgt.Invoke()
+
+        '    Do While blnPANDelegate = False
+        '        Application.DoEvents()
+        '        lblPanProcess.Text = strPanProcess
+        '        lblPanStatus.Text = "Status  : " & strPanStatus
+        '    Loop
+
+
+        '    If blnPANVerification = True Then
+        '        pctPANWrong.Visible = True
+        '        pctPANCorrect.Visible = False
+
+        '        If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+        '            lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
+        '        Else
+        '            lblPanStatus.Text = "Status  :  PAN verification cancelled."
+        '        End If
+
+        '        'lblPanStatus.Text = "Status  : PAN verification cancelled."
+        '    Else
+        '        pctPANWrong.Visible = False
+        '        pctPANCorrect.Visible = True
+
+        '        If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+        '            lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
+        '        Else
+        '            lblPanStatus.Text = "Status  :  PAN verification completed."
+        '        End If
+
+        '        'lblPanStatus.Text = "Status  :  PAN verification completed."
+        '    End If
+
+        '    pctProcess3.Visible = False
+        'End If
+
+        'lblPanProcess1.Visible = False
+
+        'If blnPANCount = True Then
+        '    lblPanProcess.Visible = True
+        'Else
+        '    lblPanProcess.Visible = False
+        'End If
+
+        'If intCntInvalidPan > 0 Then
+        '    lblPanProcess1.Visible = True
+        '    lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in ITD."
+        '    If blnDemoVersion = True Then
+        '        lblPanProcess1.Enabled = False
+        '    Else
+        '        lblPanProcess1.Enabled = True
+        '    End If
+        'Else
+        '    lblPanProcess1.Text = ""
+        'End If
+
+        'If intIgnoredPANList > 0 Then
+        '    If File.Exists(strIgnoredPANListFilePath) = True Then
+        '        lblIgnoredPANList.Visible = True
+        '    End If
+
+        '    lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
+        '    If blnDemoVersion = True Then
+        '        lblIgnoredPANList.Enabled = False
+        '    Else
+        '        lblIgnoredPANList.Enabled = True
+        '    End If
+        'Else
+        '    lblIgnoredPANList.Text = ""
+        '    lblIgnoredPANList.Visible = False
+        'End If
+        ''***************************************************************TdsPac_PanVerification ChallanWithSalary****************************************
+
+
+
+
         Application.DoEvents()
         If blnInternetConnectionFailed = True Then
             pctPANWrong.Visible = True
