@@ -164,6 +164,7 @@ Public Class frmTraces
             Dim result As String = Nothing
             Dim qtid As String
             qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & " " & txtuserid.Text & " " & txtpwd.Text & " " & lbltan.Text
+            'qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & " '" & txtuserid.Text & "'  '" & txtpwd.Text & "' '" & lbltan.Text & "'"
             'qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & "   " & " " & lbltan.Text
             Dim epubCheckPath As String = Application.StartupPath & "\traces\traces.jar"
             Dim arguments As String = "-jar " & epubCheckPath & " " & qtid
