@@ -26,9 +26,9 @@ Public Class frmLicense
     Dim strDNFActivationKey As String = Application.StartupPath + "\\activation.dll"
     'Ver 8.00-FastFacts-652->FastFacts-664 start
 
-    Dim strApplicationPath As String = "C:\eTdsDNF2324"
-    Dim strSLDetailsPath As String = "C:\eTdsDNF2324\SLDetail.xml"
-    Dim strSLDetailsPathPrevious As String = "C:\eTdsDNF2324\SLDetails.xml"
+    Dim strApplicationPath As String = "C:\eTdsDNF2425"
+    Dim strSLDetailsPath As String = "C:\eTdsDNF2425\SLDetail.xml"
+    Dim strSLDetailsPathPrevious As String = "C:\eTdsDNF2425\SLDetails.xml"
 
     'Dim strApplicationPath As String = "C:\eTdsWizard\eTdsDNF"
     'Dim strSLDetailsPath As String = "C:\eTdsWizard\eTdsDNF\SLDetail.xml"
@@ -262,7 +262,7 @@ Public Class frmLicense
         ''DNF Chnages Ver 4.02 end
         ''
         'Shell(DNFPath & " " & seTdsPath & " ~" & True & "~" & blnchkVerifyPAN & "~" & blnchkLateFiling & "~" & strLateFilingDate & "~" & strCSIValidPath & "~" & blnChkListPANName & "~" & True & "~" & blnchkNetConnetion, AppWinStyle.NormalFocus)
-
+        'strTempTdsPacParamter = "D:\backup041123Anu\Anu\NewGen_CO\Noopur\IN\DNF_8.6\Form24Q4.txt~True~True~True~25/04/2024 15:50:45~D:\backup041123Anu\Anu\NewGen_CO\Noopur\IN\DNF_8.6\JDHB04817B200424.csi~True~True~True~True".Split("~")
         'strTempTdsPacParamter = "C:\eTdsWizard\MULRAJINDRAVADANSHAH202324\27Q\Q1\Form27Q1.txt~True~True~True~21/09/2023 15:50:45~E:\Anu\Noopur\IN\23-24,27Q_Q1\MUMM17774B080923.csi~True~True~True~True".Split("~")
         strTempTdsPacParamter = Command.Split("~")
         ''DNF Chnages Ver 4.02 start

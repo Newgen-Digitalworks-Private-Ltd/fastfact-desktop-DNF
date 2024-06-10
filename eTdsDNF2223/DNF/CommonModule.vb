@@ -72,7 +72,7 @@ Public Module CommonModule
     'Ver 8.00-FastFacts-652->FastFacts-664 start
     'Public Const ConstStrFYyr As String = "1819"
     'Public Const ConstStrFYyr As String = "1920"
-    Public Const ConstStrFYyr As String = "2324"
+    Public Const ConstStrFYyr As String = "2425"
     'Ver 8.00-FastFacts-652->FastFacts-664 end
     'Ver 18.00-7.00 end
     'Ver 6.00-REQ689 end
@@ -163,7 +163,7 @@ Public Module CommonModule
     'Public strStandaloneDNFPcode As String = "E049"  '' Only for 1920
     'Public strStandaloneDNFPcode As String = "E052"  '' Only for 2021
     'Public strStandaloneDNFPcode As String = "E061"  '' Only for 2122
-    Public strStandaloneDNFPcode As String = "E065"  '' Only for 2123
+    Public strStandaloneDNFPcode As String = "E067"  '' Only for 2425
     'Ver 8.00-FastFacts-652->FastFacts-664 end
     'Ver 18.00-7.00 end
     'Ver 4.041 start
@@ -182,7 +182,7 @@ Public Module CommonModule
     'Ver 8.00-FastFacts-652->FastFacts-664 start
     'Public Const strProductName As String = "eTdsDNF1819"
     'Public Const strProductName As String = "eTdsDNF1920"
-    Public Const strProductName As String = "eTdsDNF2324"
+    Public Const strProductName As String = "eTdsDNF2425"
     'Ver 8.00-FastFacts-652->FastFacts-664 end
     'Ver 18.00-7.00 end
     Public strMessageboxHeading As String = "eTdsDNF"
@@ -190,7 +190,7 @@ Public Module CommonModule
     Public dsMainDNFValidation As New DataSet
     Public dtTempPANSalary As DataTable
     Dim strPANs() As Object
-    Public iswizard As Boolean = True
+    Public iswizard As Boolean = False
     'Dim cp As New CheckPAN.VerifyPAN     Ver 8.0.0.3 for rollback in ver 8.0.0.1
     'Ver 7.03-REQ816 end 
     'Ver 7.05-FASTFACTS-584 start
@@ -817,11 +817,11 @@ Public Module CommonModule
                         'Ver 8.01 - 129703 start
                         'ElseIf values(16) < "201011" Or values(16) > "201819" Then 'Fin Year
                         'ElseIf values(16) < "201011" Or values(16) > "201920" Then 'Fin Year
-                    ElseIf values(16) < "201011" Or values(16) > "202324" Then 'Fin Year
+                    ElseIf values(16) < "201011" Or values(16) > "202425" Then 'Fin Year
                         'Ver 8.01 - 129703 end
                         'Ver 7.03-REQ797 end
                         'Ver 6.00-REQ689 end
-                        MessageBox.Show("Please select file of financial year 2010-2011, 2011-2012, 2012-2013 or 2013-2014 or 2014-2015 or 2015-2016 or 2016-2017 or 2017-2018 or 2018-2019 or 2019-20 or 2020-21 or 2021-22 or 2022-23 or 2023-24 only.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Information) 'or 2019-20
+                        MessageBox.Show("Please select file of financial year 2010-2011, 2011-2012, 2012-2013 or 2013-2014 or 2014-2015 or 2015-2016 or 2016-2017 or 2017-2018 or 2018-2019 or 2019-20 or 2020-21 or 2021-22 or 2022-23 or 2023-24 or 2024-25 only.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Information) 'or 2019-20
                         'Ver 5.2-REQ590 end 
                         'Ver 3.01-REQ303 end
                         'Ver 1.01-E590 End
