@@ -24,6 +24,8 @@ Partial Class frmTraces
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lblPanProcess = New System.Windows.Forms.Label()
+        Me.lblPanProcess1 = New System.Windows.Forms.LinkLabel()
         Me.btnvalidpan = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.lblpath = New System.Windows.Forms.Label()
@@ -35,8 +37,7 @@ Partial Class frmTraces
         Me.txtpwd = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.lblPanProcess1 = New System.Windows.Forms.LinkLabel()
-        Me.lblPanProcess = New System.Windows.Forms.Label()
+        Me.btnpanexport = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,6 +56,7 @@ Partial Class frmTraces
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel4.Controls.Add(Me.btnpanexport)
         Me.Panel4.Controls.Add(Me.lblPanProcess)
         Me.Panel4.Controls.Add(Me.lblPanProcess1)
         Me.Panel4.Controls.Add(Me.btnvalidpan)
@@ -71,14 +73,35 @@ Partial Class frmTraces
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 102)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(613, 192)
+        Me.Panel4.Size = New System.Drawing.Size(613, 215)
         Me.Panel4.TabIndex = 99
+        '
+        'lblPanProcess
+        '
+        Me.lblPanProcess.AutoSize = True
+        Me.lblPanProcess.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPanProcess.Location = New System.Drawing.Point(156, 154)
+        Me.lblPanProcess.Name = "lblPanProcess"
+        Me.lblPanProcess.Size = New System.Drawing.Size(53, 15)
+        Me.lblPanProcess.TabIndex = 164
+        Me.lblPanProcess.Text = "Status  :"
+        '
+        'lblPanProcess1
+        '
+        Me.lblPanProcess1.AutoSize = True
+        Me.lblPanProcess1.Location = New System.Drawing.Point(156, 157)
+        Me.lblPanProcess1.Name = "lblPanProcess1"
+        Me.lblPanProcess1.Size = New System.Drawing.Size(46, 13)
+        Me.lblPanProcess1.TabIndex = 163
+        Me.lblPanProcess1.TabStop = True
+        Me.lblPanProcess1.Text = "Status  :"
+        Me.lblPanProcess1.Visible = False
         '
         'btnvalidpan
         '
         Me.btnvalidpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnvalidpan.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.btnvalidpan.Location = New System.Drawing.Point(274, 128)
+        Me.btnvalidpan.Location = New System.Drawing.Point(270, 126)
         Me.btnvalidpan.Name = "btnvalidpan"
         Me.btnvalidpan.Size = New System.Drawing.Size(100, 23)
         Me.btnvalidpan.TabIndex = 94
@@ -187,32 +210,23 @@ Partial Class frmTraces
         Me.Button1.TabIndex = 86
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'lblPanProcess1
+        'btnpanexport
         '
-        Me.lblPanProcess1.AutoSize = True
-        Me.lblPanProcess1.Location = New System.Drawing.Point(156, 157)
-        Me.lblPanProcess1.Name = "lblPanProcess1"
-        Me.lblPanProcess1.Size = New System.Drawing.Size(46, 13)
-        Me.lblPanProcess1.TabIndex = 163
-        Me.lblPanProcess1.TabStop = True
-        Me.lblPanProcess1.Text = "Status  :"
-        Me.lblPanProcess1.Visible = False
-        '
-        'lblPanProcess
-        '
-        Me.lblPanProcess.AutoSize = True
-        Me.lblPanProcess.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPanProcess.Location = New System.Drawing.Point(156, 157)
-        Me.lblPanProcess.Name = "lblPanProcess"
-        Me.lblPanProcess.Size = New System.Drawing.Size(53, 15)
-        Me.lblPanProcess.TabIndex = 164
-        Me.lblPanProcess.Text = "Status  :"
+        Me.btnpanexport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpanexport.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.btnpanexport.Location = New System.Drawing.Point(231, 185)
+        Me.btnpanexport.Name = "btnpanexport"
+        Me.btnpanexport.Size = New System.Drawing.Size(173, 23)
+        Me.btnpanexport.TabIndex = 165
+        Me.btnpanexport.Text = "Export to Excel"
+        Me.btnpanexport.UseVisualStyleBackColor = True
+        Me.btnpanexport.Visible = False
         '
         'frmTraces
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(613, 294)
+        Me.ClientSize = New System.Drawing.Size(613, 317)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
@@ -241,4 +255,5 @@ Partial Class frmTraces
     Friend WithEvents btnvalidpan As Button
     Friend WithEvents lblPanProcess1 As LinkLabel
     Friend WithEvents lblPanProcess As Label
+    Friend WithEvents btnpanexport As Button
 End Class

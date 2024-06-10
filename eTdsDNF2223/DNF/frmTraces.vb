@@ -7,12 +7,15 @@ Public Class frmTraces
 
     Private Sub btnvalidpan_Click(sender As Object, e As EventArgs) Handles btnvalidpan.Click
 
+        btnvalidpan.Enabled = False
 
         If txtuserid.Text <> " " And txtpwd.Text <> " " And lbltan.Text <> "" Then
             Pantraces()
             readcsv()
         Else
             MsgBox("Please enter the Login Credentials")
+            btnvalidpan.Enabled = True
+            btnpanexport.Visible = False
         End If
 
     End Sub
@@ -98,6 +101,7 @@ Public Class frmTraces
             lblPanProcess1.Visible = False
             blnPANVerification = True
             actCntInvalidPan = actpan
+            btnpanexport.Visible = True
             'Else
             '    lblPanProcess.Visible = False
             'End If
@@ -109,6 +113,7 @@ Public Class frmTraces
             lblPanProcess.Visible = False
             intCntInvalidPan = inactpan
             blnPANVerification = True
+            btnpanexport.Visible = True
             'If blnDemoVersion = True Then
             '    lblPanProcess1.Enabled = False
             'Else
@@ -116,6 +121,7 @@ Public Class frmTraces
             'End If
         Else
             lblPanProcess1.Text = ""
+            'btnpanexport.Visible = False
         End If
 
         'CheckPANwithExistingTracesList()
@@ -158,6 +164,7 @@ Public Class frmTraces
             Dim result As String = Nothing
             Dim qtid As String
             qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & " " & txtuserid.Text & " " & txtpwd.Text & " " & lbltan.Text
+            'qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & " '" & txtuserid.Text & "'  '" & txtpwd.Text & "' '" & lbltan.Text & "'"
             'qtid = " PANVERIFY " & Application.StartupPath & "\traces\pan.txt" & "   " & " " & lbltan.Text
             Dim epubCheckPath As String = Application.StartupPath & "\traces\traces.jar"
             Dim arguments As String = "-jar " & epubCheckPath & " " & qtid
@@ -247,5 +254,104 @@ Public Class frmTraces
 
         End Try
     End Function
+
+    Private Sub btnpanexport_Click(sender As Object, e As EventArgs) Handles btnpanexport.Click
+        ExportToExcel(csvdt)
+    End Sub
+    Public Sub ExportToExcel(ByVal dsExport As DataTable)
+        Try
+            Dim IEProcess As Process = New Process
+
+            Dim ts As StreamWriter
+            Dim i, j As Integer
+            Dim mExpText As String
+            Dim mStr As String
+            Dim mPos As Integer
+
+            Dim ExlAppln As New Object
+            Dim ExlBook As New Object
+
+            ExlAppln = CreateObject("Excel.Application")
+
+            ts = New StreamWriter(Application.StartupPath & "\ValidatePan.xls")
+
+            mExpText = ""
+            mStr = ""
+
+
+            For k As Integer = 0 To dsExport.Columns.Count - 1
+                mStr = dsExport.Columns(k).ColumnName.ToString
+                If mExpText = "" Then
+                    mExpText = IIf(mStr = "", Space(1), mStr)
+                    'mExpText = mExpText & Chr(9) & mStr
+                Else
+                    mExpText = mExpText & Chr(9) & IIf(mStr = "", Space(1), mStr)
+                End If
+
+                'memptext=
+                'MsgBox(dsExport.Tables(0).Columns(k).ColumnName)
+            Next
+            ts.WriteLine(mExpText)
+
+            mExpText = ""
+            mStr = ""
+
+
+            For i = 0 To dsExport.Rows.Count - 1
+                mStr = ""
+                For j = 0 To dsExport.Columns.Count - 1
+                    If mExpText = "" Then
+
+                        'mExpText = IIf((dsExport.Tables(0).Rows(i).Item(j) = ""), Space(1), dsExport.Tables(0).Rows(i).Item(j))
+                        If IsDBNull(dsExport.Rows(i).Item(j)) = False Then
+
+                            'mExpText = IIf((dsExport.Tables(0).Rows(i).Item(j) = ""), Space(1), dsExport.Tables(0).Rows(i).Item(j))
+                            mExpText = IIf((Convert.ToString(dsExport.Rows(i).Item(j)) = ""), Space(1), Convert.ToString(dsExport.Rows(i).Item(j)))
+
+                        End If
+
+                        mExpText = IIf(Mid(mExpText, 1, 1) = "0", "'" & mExpText, mExpText)
+                    Else
+
+                        'mPos = InStr(1, dsExport.Tables(0).Rows(i).Item(j), Chr(13))
+                        'mStr = dsExport.Tables(0).Rows(i).Item(j)
+                        If IsDBNull(dsExport.Rows(i).Item(j)) = False Then
+                            mPos = InStr(1, dsExport.Rows(i).Item(j), Chr(13))
+
+                            ' mStr = dsExport.Tables(0).Rows(i).Item(j)
+                            mStr = Convert.ToString(dsExport.Rows(i).Item(j))
+
+                        Else
+                            mStr = vbNullString
+                        End If
+
+
+                        Do While mPos > 0
+                            mStr = Mid(mStr, 1, Val(mPos) - 1) & " " & Mid(mStr, Val(mPos) + 2)
+                            mPos = InStr(1, mStr, Chr(13))
+                        Loop
+
+                        mExpText = mExpText & Chr(9) & mStr
+                    End If
+                Next
+                ts.WriteLine(mExpText)
+                mExpText = ""
+            Next
+            ts.Close()
+
+            If File.Exists(Application.StartupPath & "\ValidatePan.xls") = True Then
+                'Process.Start(Application.StartupPath & "\ExportP.xlsx")
+                System.Diagnostics.Process.Start(Application.StartupPath + "\ValidatePan.xls")
+            End If
+        Catch ex As Exception
+            MsgBox("The process cannot access the file """ & Application.StartupPath & "\ValidatePan.xlsx"" because it is being used by another process.")
+            If ex.Message = "The process cannot access the file """ & Application.StartupPath & "\ValidatePan.xlsx"" because it is being used by another process." Then
+                MsgBox("Close file 'ValidatePan.xlsx' and then try again!")
+            Else
+                MsgBox(ex.Message)
+            End If
+
+        End Try
+    End Sub
 
 End Class
