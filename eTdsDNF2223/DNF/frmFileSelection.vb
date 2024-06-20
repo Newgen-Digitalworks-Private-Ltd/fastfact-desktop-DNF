@@ -12,7 +12,7 @@ Public Class frmFileSelection
     Private Sub frmFileSelection_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             Me.CenterToScreen()
-
+            'CreateTracesFolder()
             'Ver 3.0.7-REQ417 start 
             If blnChkDNFIntegrate = True Then
                 txtFileSelection.Text = strFilePath
@@ -101,6 +101,37 @@ Public Class frmFileSelection
             MessageBox.Show(ex.Message, "DNF")
         End Try
     End Sub
+    Private Sub CreateTracesFolder()
+        Try
+
+            Dim strSourcePath As String = Application.StartupPath & "\Traces"
+            'Dim strSourcePath As String = "C:\eTdsWizard\traces"
+
+            ' If directory does not exist, create it
+            If Directory.Exists(strSourcePath) Then
+                If Not File.Exists(Path.Combine(strSourcePath, "traces.md")) Then
+                    File.Copy(Application.StartupPath & "\traces.md", Path.Combine(strSourcePath, "traces.md"))
+                End If
+
+                If Not File.Exists(Path.Combine(strSourcePath, "README.md")) Then
+                    File.Copy(Application.StartupPath & "\README.md", Path.Combine(strSourcePath, "README.md"))
+                End If
+
+                If Not File.Exists(Path.Combine(strSourcePath, "Traces.jar")) Then
+                    File.Copy(Application.StartupPath & "\Traces.jar", Path.Combine(strSourcePath, "Traces.jar"))
+                End If
+            Else
+                Directory.CreateDirectory(strSourcePath)
+                ' Copy the files inside this root
+                File.Copy(Application.StartupPath & "\traces.md", Path.Combine(strSourcePath, "traces.md"))
+                File.Copy(Application.StartupPath & "\README.md", Path.Combine(strSourcePath, "README.md"))
+                File.Copy(Application.StartupPath & "\Traces.jar", Path.Combine(strSourcePath, "Traces.jar"))
+            End If
+        Catch ex As Exception
+            ' Handle exception
+        End Try
+    End Sub
+
     Private Sub FillShortDeduction()
         Dim filepath As String = Application.StartupPath + "\ShortDeduction.txt"
         Dim strShortDeductionVal As String
