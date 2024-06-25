@@ -190,7 +190,7 @@ Public Module CommonModule
     Public dsMainDNFValidation As New DataSet
     Public dtTempPANSalary As DataTable
     Dim strPANs() As Object
-    Public iswizard As Boolean = False
+    Public iswizard As Boolean = True
     'Dim cp As New CheckPAN.VerifyPAN     Ver 8.0.0.3 for rollback in ver 8.0.0.1
     'Ver 7.03-REQ816 end 
     'Ver 7.05-FASTFACTS-584 start
@@ -3267,6 +3267,10 @@ takeAction:
         dtTempView.RowFilter = ""
 
         Application.DoEvents()
+
+        If File.Exists(strValidPANListFilePath) Then
+            File.Delete(strValidPANListFilePath)
+        End If
         CheckPANWithExistingList()
         Application.DoEvents()
 
@@ -3440,7 +3444,7 @@ takeAction:
                 strtAssessmentYear = Mid(dtBH.Rows(0)("Fin Yr"), 1, 4) & "-" & Mid(dtBH.Rows(0)("Fin Yr"), 5)
                 dtTempviewSalary.Sort = "PAN"
                 'dtTempviewSalary.RowFilter = "Filler4='N'"
-                dtTempviewSalary.RowFilter = " PAN <>'PANNOTAVBL' " 'Ver 7.03-REQ816 start
+                'dtTempviewSalary.RowFilter = " PAN <>'PANNOTAVBL' " 'Ver 7.03-REQ816 start
                 dtTempPAN = dtTempviewSalary.ToTable("PANValid", True, "PAN")
                 Application.DoEvents()
 
@@ -4435,8 +4439,9 @@ skipSD:
                     calculatingAmount = remainingAmount
                     rebateAmount = dsNew.Tables(0).Rows(i)("Rebate")
                 End If
-
-
+                If dsNew.Tables(0).Rows(i)("TaxSlabID") = "Y" And TotIncome <= dsNew.Tables(0).Rows(2)("ToAmount") Then
+                    rebateAmount = dsNew.Tables(0).Rows(i)("Rebate")
+                End If
                 If (TotIncome >= dsNew.Tables(0).Rows(0)("ToAmount") And isPenalApplied = True) Then
                     rebateAmount = 0
                     flag = True
@@ -4445,6 +4450,8 @@ skipSD:
                 taxAmount = Math.Round(calculatingAmount * taxPercentage * 0.01) - rebateAmount
 
                 grossTax += IIf(taxAmount > 0, taxAmount, 0)
+
+
                 remainingAmount = TotIncome - dsNew.Tables(0).Rows(i)("ToAmount")
 
             End If '1

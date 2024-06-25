@@ -4,6 +4,10 @@ Imports System.Text
 Imports System.IO
 Imports System.Windows
 Imports eTdsDNF2223
+
+'Imports Microsoft.VisualBasic.FileIO
+'Imports Microsoft.VisualBasic.FileIO
+
 Module ExcelReporting
     Dim hsShortDeductions As New Hashtable
     Dim hsLatePayments As New Hashtable
@@ -12,6 +16,11 @@ Module ExcelReporting
     Public strProcessID As String
     Public aryExcel As New ArrayList
     Dim arrData(,) As Object
+    Dim dt_report As New DataTable()
+
+
+
+
 
     Public Sub CreateExcelFile()
         blnFileFailure = False
@@ -31,8 +40,11 @@ Module ExcelReporting
             'Ver 5.05-REQ641 end 
             'Ver 7.03-REQ816 start
             Dim dtTempSalary As New DataView(dsMainDNFValidation.Tables("SalaryDetails"))
-            'Ver 7.03-REQ816 end 
+            'Ver 7.03-REQ816 end
+            '
 
+
+            Dim dt_PanReport As DataTable = GetDataTableFromCSV("C:\eTdsWizard\traces\report.csv")
 
             If blnDemoVersion = False Then
 
@@ -285,28 +297,71 @@ Module ExcelReporting
                         'Ver 5.05-REQ641 start
                         'Ver 5.05-REQ641-01 start the '01' number is added by gajanan to avoid unresolved issue by jitu
                         'ElseIf sheet.Name = "Invalid Salary Pans" Then
-                    ElseIf sheet.Name = "Invalid Salary Pans" And strFinYear >= "201314" Then
+                        'anu_ETDSDNF
+                        'ElseIf sheet.Name = "Invalid Salary Pans" And strFinYear >= "201314" Then
+
+                        '    'Ver 5.05-REQ641-01 end
+                        '    Dim dtTmpInvalidPAN1 As DataTable
+
+
+                        '    dtTempSDView.RowFilter = "PANValid='N'"
+                        '    dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
+                        '    Dim J As Integer
+                        '    J = 2
+                        '    For k As Integer = 0 To dtTmpInvalidPAN1.Rows.Count - 1
+                        '        ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
+                        '        sheet.Columns.AutoFit()
+
+                        '        sheet.Cells(J, 1) = dtTmpInvalidPAN1.Rows(k)("PAN").ToString
+                        '        sheet.Cells(J, 2) = dtTmpInvalidPAN1.Rows(k)("Name").ToString
+                        '        J = J + 1
+                        '    Next
+                        '    dtTempSDView.Dispose()
+                        '    dtTmpInvalidPAN1.Dispose()
+
+                        '    'Ver 5.05-REQ641 end 
+
+                        '    'Ver 7.03-REQ816 start    'Jitendra Started :
+                        'anu_ETDSDNF
+                    ElseIf sheet.Name = "PAN Verification" And strFinYear >= "201314" Then
 
                         'Ver 5.05-REQ641-01 end
-                        Dim dtTmpInvalidPAN1 As DataTable
-                        dtTempSDView.RowFilter = "PANValid='N'"
-                        dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
+                        'Dim dtTmpInvalidPAN1 As DataTable
+
+
+                        'dtTempSDView.RowFilter = "PANValid='N'"
+                        'dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
                         Dim J As Integer
-                        J = 2
-                        For k As Integer = 0 To dtTmpInvalidPAN1.Rows.Count - 1
+                        J = 5
+                        For k As Integer = 0 To dt_PanReport.Rows.Count - 1
                             ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
                             sheet.Columns.AutoFit()
 
-                            sheet.Cells(J, 1) = dtTmpInvalidPAN1.Rows(k)("PAN").ToString
-                            sheet.Cells(J, 2) = dtTmpInvalidPAN1.Rows(k)("Name").ToString
+                            sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
+                            sheet.Cells(J, 2) = dt_PanReport.Rows(k)("Name").ToString
+                            sheet.Cells(J, 4) = dt_PanReport.Rows(k)("STATUS").ToString
+
                             J = J + 1
                         Next
-                        dtTempSDView.Dispose()
-                        dtTmpInvalidPAN1.Dispose()
+                    ElseIf sheet.Name = "Invalid Salary Pans" And strFinYear >= "201314" Then
 
-                        'Ver 5.05-REQ641 end 
+                        'Ver 5.05-REQ641-01 end
+                        'Dim dtTmpInvalidPAN1 As DataTable
 
-                        'Ver 7.03-REQ816 start    'Jitendra Started :
+
+                        'dtTempSDView.RowFilter = "PANValid='N'"
+                        'dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
+                        Dim J As Integer
+                        J = 2
+                        For k As Integer = 0 To dt_PanReport.Rows.Count - 1
+                            ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
+                            If dt_PanReport.Rows(k)("STATUS").ToString = "Invalid" Then
+                                sheet.Columns.AutoFit()
+                                sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
+                                sheet.Cells(J, 2) = dt_PanReport.Rows(k)("Name").ToString
+                                J = J + 1
+                            End If
+                        Next
                     ElseIf sheet.Name = "TaxComputation&ShortDeduction" And strFinYear >= "201718" Then
 
                         Dim W As Integer
@@ -338,6 +393,18 @@ Module ExcelReporting
                                     '    dictSum = TaxSlabCalculation(dtTempSalary.Item(k).Row("TotIncome").ToString(), isPenalApplied, dtTempSalary.Item(k).Row("Category").ToString(),
                                     '                             dtTempSalary.Item(k).Row("Relief89").ToString())
                                     'End If
+                                    'MsgBox(dtTempSalary.Item(k).Row("Taxation"))
+                                    If strFinYear >= "202324" Then
+                                        If dtTempSalary.Item(k).Row("Taxation").ToString = "Y" Then
+                                            dtTempSalary.Item(k).Row("Taxation") = "N"
+                                        ElseIf dtTempSalary.Item(k).Row("Taxation").ToString = "N" Then
+                                            dtTempSalary.Item(k).Row("Taxation") = "Y"
+                                        End If
+                                        'MsgBox(dtTempSalary.Item(k).Row("Taxation"))
+                                    End If
+                                    If dtTempSalary.Item(k).Row("PAN").ToString() = "BTGPM3215F" Then
+                                        'MsgBox("anu")
+                                    End If
                                     If strFinYear >= "202021" Then
                                         If dtTempSalary.Item(k).Row("Taxation").ToString = "Y" Then
 
@@ -520,6 +587,57 @@ Module ExcelReporting
         End Try
 
     End Sub
+    Function GetDataTableFromCSV(filePath As String) As DataTable
+        Dim dt As New DataTable()
+        Using parser As New Microsoft.VisualBasic.FileIO.TextFieldParser(filePath)
+            parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited
+            parser.SetDelimiters(",")
+
+            Dim isFirstRow As Boolean = True
+
+            Dim dts As DataSet = New DataSet
+            While Not parser.EndOfData
+                Dim fields As String() = parser.ReadFields()
+
+                If isFirstRow Then
+                    For Each field As String In fields
+                        dt.Columns.Add(New DataColumn(field, GetType(String)))
+                    Next
+                    isFirstRow = False
+                Else
+                    Dim row As DataRow = dt.NewRow()
+                    row.ItemArray = fields
+                    dt.Rows.Add(row)
+                End If
+            End While
+            dt.TableName = "PanReport"
+            dt.AcceptChanges()
+            'dts.Tables.Add(dt)
+        End Using
+        Return dt
+
+        'Using parser As New TextFieldParser(filePath)
+        '        parser.TextFieldType = FieldType.Delimited
+        '        parser.SetDelimiters(",")
+
+        '        ' Read the header line
+        '        If Not parser.EndOfData Then
+        'Dim headers As String() = parser.ReadFields()
+        'For Each header As String In headers
+        '                dt.Columns.Add(header)
+        '            Next
+        'End If
+
+        '' Read the data lines
+        'While Not parser.EndOfData
+        'Dim fields As String() = parser.ReadFields()
+        '            dt.Rows.Add(fields)
+        '        End While
+        'End Using
+
+        'Return dt
+    End Function
+
     Private Function CallTracesJAR() As Boolean
 
 

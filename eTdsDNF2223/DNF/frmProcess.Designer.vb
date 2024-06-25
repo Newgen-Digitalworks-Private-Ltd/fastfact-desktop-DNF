@@ -620,7 +620,7 @@ Partial Class frmProcess
         Me.cmdShowData.FlatAppearance.BorderSize = 0
         Me.cmdShowData.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdShowData.ForeColor = System.Drawing.Color.Black
-        Me.cmdShowData.Location = New System.Drawing.Point(507, 447)
+        Me.cmdShowData.Location = New System.Drawing.Point(507, 442)
         Me.cmdShowData.Name = "cmdShowData"
         Me.cmdShowData.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdShowData.Size = New System.Drawing.Size(89, 35)
@@ -641,7 +641,7 @@ Partial Class frmProcess
         Me.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.btnNext.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext.ForeColor = System.Drawing.Color.Black
-        Me.btnNext.Location = New System.Drawing.Point(603, 447)
+        Me.btnNext.Location = New System.Drawing.Point(603, 443)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnNext.Size = New System.Drawing.Size(87, 35)
@@ -658,7 +658,7 @@ Partial Class frmProcess
         Me.btnExit.FlatAppearance.BorderSize = 0
         Me.btnExit.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.Black
-        Me.btnExit.Location = New System.Drawing.Point(697, 447)
+        Me.btnExit.Location = New System.Drawing.Point(697, 442)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnExit.Size = New System.Drawing.Size(87, 35)
@@ -764,7 +764,7 @@ Partial Class frmProcess
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(792, 542)
+        Me.ClientSize = New System.Drawing.Size(792, 561)
         Me.Controls.Add(Me.btnePayment)
         Me.Controls.Add(Me.PANValidateBrowser)
         Me.Controls.Add(Me.pbFNF)
