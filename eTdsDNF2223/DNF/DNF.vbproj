@@ -93,10 +93,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Debug\Interop.CDO.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.MSHTML, Version=4.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Interop.MSHTML">
+      <HintPath>..\..\ExternalDll\Interop.MSHTML.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.MSHTML.dll</HintPath>
     </Reference>
     <Reference Include="Interop.VBIDE">
       <HintPath>obj\x86\Debug\Interop.VBIDE.dll</HintPath>
@@ -107,9 +106,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
-    <Reference Include="NewPANValidate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\NewPANValidate.dll</HintPath>
+    <Reference Include="NewPANValidate">
+      <HintPath>..\..\ExternalDll\NewPANValidate.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

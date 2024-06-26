@@ -339,6 +339,7 @@ Module ExcelReporting
 
                             sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
                             sheet.Cells(J, 2) = dt_PanReport.Rows(k)("Name").ToString
+                            sheet.Cells(J, 3) = dt_PanReport.Rows(k)("Name").ToString
                             sheet.Cells(J, 4) = dt_PanReport.Rows(k)("STATUS").ToString
 
                             J = J + 1
