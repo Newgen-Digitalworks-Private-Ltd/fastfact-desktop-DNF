@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("DNF")>
-<Assembly: AssemblyDescription("10-06-2024")>
+<Assembly: AssemblyDescription("27-06-2024")>
 <Assembly: AssemblyCompany("Fast Facts")>
 <Assembly: AssemblyProduct("DNF")>
 <Assembly: AssemblyCopyright("Copyright ©  2021")>
