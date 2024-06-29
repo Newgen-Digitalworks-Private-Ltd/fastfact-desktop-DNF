@@ -42,7 +42,28 @@ Module ExcelReporting
             Dim dtTempSalary As New DataView(dsMainDNFValidation.Tables("SalaryDetails"))
             'Ver 7.03-REQ816 end
             '
+            'anu_PanNameindeductee_28Jun24
 
+            Dim DeducteePanTable As New DataTable()
+            DeducteePanTable.Columns.Add("name", GetType(String))
+            DeducteePanTable.Columns.Add("pan", GetType(String))
+
+            For Each rowView As DataRowView In dttempDDView
+                Dim newRow As DataRow = DeducteePanTable.NewRow()
+                newRow("name") = rowView("name")
+                newRow("pan") = rowView("pan")
+                DeducteePanTable.Rows.Add(newRow)
+            Next
+
+            For Each rowView As DataRowView In dtTempSDView
+
+                Dim newRow As DataRow = DeducteePanTable.NewRow()
+                newRow("name") = rowView("name")
+                newRow("pan") = rowView("pan")
+                DeducteePanTable.Rows.Add(newRow)
+            Next
+
+            'anu_PanNameindeductee_28Jun24
 
             Dim dt_PanReport As DataTable = GetDataTableFromCSV("C:\eTdsWizard\traces\report.csv")
 
@@ -331,14 +352,51 @@ Module ExcelReporting
 
                         'dtTempSDView.RowFilter = "PANValid='N'"
                         'dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
+                        For p As Integer = 1 To 5
+                            'If sheet.Rows(p)(0).ToString() <> "PAN" Then
+                            sheet.Rows(p).Delete()
+                            'End If
+
+                        Next
+
+
+                        'DeducteePanTable
+                        Dim pannameDictionary As New Dictionary(Of String, String)()
+                        For Each row As DataRow In DeducteePanTable.Rows
+                            Dim pan As String = row("pan").ToString()
+                            Dim name As String = row("name").ToString()
+                            If Not pannameDictionary.ContainsKey(pan) Then
+                                pannameDictionary.Add(pan, name)
+                            End If
+                        Next
+
+                        'PAN PAN Name in deductee	PAN Name in Traces	Status
+                        sheet.Rows(1).Font.Bold = True
+                        'Dim cell As Excel.Range = sheet.Cells(1, 1)
+                        'cell.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Orange)
+                        'Dim cell1 As Excel.Range = sheet.Cells(1, 2)
+                        'cell1.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Orange)
+
+                        sheet.Cells(1, 1) = "PAN"
+                        sheet.Cells(1, 2) = "PAN Name in deductee"
+                        sheet.Cells(1, 3) = "PAN Name in Traces"
+                        sheet.Cells(1, 4) = "Status"
+
                         Dim J As Integer
-                        J = 5
+                        J = 2
                         For k As Integer = 0 To dt_PanReport.Rows.Count - 1
                             ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
                             sheet.Columns.AutoFit()
 
+
+
+                            Dim nameFromDeducteePanTable As String = String.Empty
+                            If pannameDictionary.ContainsKey(dt_PanReport.Rows(k)("PAN").ToString) Then
+                                nameFromDeducteePanTable = pannameDictionary(dt_PanReport.Rows(k)("PAN").ToString)
+                            End If
+                            sheet.Rows(J).Font.Bold = False
                             sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
-                            sheet.Cells(J, 2) = dt_PanReport.Rows(k)("Name").ToString
+                            sheet.Cells(J, 2) = nameFromDeducteePanTable
                             sheet.Cells(J, 3) = dt_PanReport.Rows(k)("Name").ToString
                             sheet.Cells(J, 4) = dt_PanReport.Rows(k)("STATUS").ToString
 

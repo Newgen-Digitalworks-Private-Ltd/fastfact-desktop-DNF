@@ -3269,7 +3269,8 @@ takeAction:
         Application.DoEvents()
 
         If File.Exists(strValidPANListFilePath) Then
-            File.Delete(strValidPANListFilePath)
+            'anuanuanu
+            'File.Delete(strValidPANListFilePath)
         End If
         CheckPANWithExistingList()
         Application.DoEvents()
