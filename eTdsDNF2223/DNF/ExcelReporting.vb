@@ -4,6 +4,7 @@ Imports System.Text
 Imports System.IO
 Imports System.Windows
 Imports eTdsDNF2223
+'Imports Microsoft.Office.Interop.Excel
 
 'Imports Microsoft.VisualBasic.FileIO
 'Imports Microsoft.VisualBasic.FileIO
@@ -18,6 +19,16 @@ Module ExcelReporting
     Dim arrData(,) As Object
     Dim dt_report As New DataTable()
 
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
 
 
 
@@ -65,7 +76,11 @@ Module ExcelReporting
 
             'anu_PanNameindeductee_28Jun24
 
-            Dim dt_PanReport As DataTable = GetDataTableFromCSV("C:\eTdsWizard\traces\report.csv")
+            Dim dt_PanReport As DataTable
+            If File.Exists("C:\eTdsWizard\traces\report.csv") Then
+                dt_PanReport = GetDataTableFromCSV("C:\eTdsWizard\traces\report.csv")
+            End If
+
 
             If blnDemoVersion = False Then
 
@@ -352,10 +367,16 @@ Module ExcelReporting
 
                         'dtTempSDView.RowFilter = "PANValid='N'"
                         'dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
-                        For p As Integer = 1 To 5
+                        For p As Integer = 1 To 4
                             'If sheet.Rows(p)(0).ToString() <> "PAN" Then
-                            sheet.Rows(p).Delete()
+                            'sheet.Rows(p).Delete()
                             'End If
+
+                            sheet.Cells(p, 1).Value = ""
+                            sheet.Cells(p, 2).Value = ""
+                            sheet.Cells(p, 3).Value = ""
+                            sheet.Cells(p, 4).Value = ""
+
 
                         Next
 
@@ -377,31 +398,57 @@ Module ExcelReporting
                         'Dim cell1 As Excel.Range = sheet.Cells(1, 2)
                         'cell1.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Orange)
 
-                        sheet.Cells(1, 1) = "PAN"
-                        sheet.Cells(1, 2) = "PAN Name in deductee"
-                        sheet.Cells(1, 3) = "PAN Name in Traces"
-                        sheet.Cells(1, 4) = "Status"
+                        Dim cell1 As Excel.Range = sheet.Cells(1, 1)
+                        Dim cell2 As Excel.Range = sheet.Cells(1, 2)
+                        Dim cell3 As Excel.Range = sheet.Cells(1, 3)
+                        Dim cell4 As Excel.Range = sheet.Cells(1, 4)
+                        sheet.Rows(1).Font.Bold = True
+                        cell1.Value = "PAN"
+                        cell2.Value = "PAN Name in deductee"
+                        cell3.Value = "PAN Name in Traces"
+                        cell4.Value = "Status"
+
+                        'ReleaseObject(cell1)
+                        'ReleaseObject(cell2)
+                        'ReleaseObject(cell3)
+                        'ReleaseObject(cell4)
+                        'ReleaseObject(sheet)
 
                         Dim J As Integer
                         J = 2
-                        For k As Integer = 0 To dt_PanReport.Rows.Count - 1
-                            ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
-                            sheet.Columns.AutoFit()
+
+                        If dt_PanReport IsNot Nothing Then
+                            For k As Integer = 0 To dt_PanReport.Rows.Count - 1
+                                ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
+                                sheet.Columns.AutoFit()
 
 
 
-                            Dim nameFromDeducteePanTable As String = String.Empty
-                            If pannameDictionary.ContainsKey(dt_PanReport.Rows(k)("PAN").ToString) Then
-                                nameFromDeducteePanTable = pannameDictionary(dt_PanReport.Rows(k)("PAN").ToString)
-                            End If
-                            sheet.Rows(J).Font.Bold = False
-                            sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
-                            sheet.Cells(J, 2) = nameFromDeducteePanTable
-                            sheet.Cells(J, 3) = dt_PanReport.Rows(k)("Name").ToString
-                            sheet.Cells(J, 4) = dt_PanReport.Rows(k)("STATUS").ToString
+                                Dim nameFromDeducteePanTable As String = String.Empty
+                                If pannameDictionary.ContainsKey(dt_PanReport.Rows(k)("PAN").ToString) Then
+                                    nameFromDeducteePanTable = pannameDictionary(dt_PanReport.Rows(k)("PAN").ToString)
+                                End If
 
-                            J = J + 1
-                        Next
+                                'If J = 1 Then
+                                '    sheet.Cell(J, 1) = "PAN"
+                                '    sheet.Cell(J, 2) = "PAN Name in deductee"
+                                '    sheet.Cell(J, 3) = "PAN Name in Traces"
+                                '    sheet.Cell(J, 4) = "Status"
+
+                                'Else
+                                sheet.Rows(J).Font.Bold = False
+                                sheet.Rows(J).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+
+                                sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
+                                sheet.Cells(J, 2) = nameFromDeducteePanTable
+                                sheet.Cells(J, 3) = dt_PanReport.Rows(k)("Name").ToString
+                                sheet.Cells(J, 4) = dt_PanReport.Rows(k)("STATUS").ToString
+                                'End If
+                                J = J + 1
+                            Next
+                        End If
+
+
                     ElseIf sheet.Name = "Invalid Salary Pans" And strFinYear >= "201314" Then
 
                         'Ver 5.05-REQ641-01 end
@@ -412,15 +459,17 @@ Module ExcelReporting
                         'dtTmpInvalidPAN1 = dtTempSDView.ToTable("InValidPANValid", True, "PAN", "Name")
                         Dim J As Integer
                         J = 2
-                        For k As Integer = 0 To dt_PanReport.Rows.Count - 1
-                            ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
-                            If dt_PanReport.Rows(k)("STATUS").ToString = "Invalid" Then
-                                sheet.Columns.AutoFit()
-                                sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
-                                sheet.Cells(J, 2) = dt_PanReport.Rows(k)("Name").ToString
-                                J = J + 1
-                            End If
-                        Next
+                        If dt_PanReport IsNot Nothing Then
+                            For k As Integer = 0 To dt_PanReport.Rows.Count - 1
+                                ' mStr = mStr & vbCrLf & dtTmpInvalidPAN1.Rows(k)("PAN").ToString & Chr(9) & dtTmpInvalidPAN1.Rows(k)("Name").ToString
+                                If dt_PanReport.Rows(k)("STATUS").ToString = "Invalid" Then
+                                    sheet.Columns.AutoFit()
+                                    sheet.Cells(J, 1) = dt_PanReport.Rows(k)("PAN").ToString
+                                    sheet.Cells(J, 2) = dt_PanReport.Rows(k)("Name").ToString
+                                    J = J + 1
+                                End If
+                            Next
+                        End If
                     ElseIf sheet.Name = "TaxComputation&ShortDeduction" And strFinYear >= "201718" Then
 
                         Dim W As Integer
@@ -482,7 +531,7 @@ Module ExcelReporting
                                                              dtTempSalary.Item(k).Row("Relief89").ToString())
                                     End If
 
-                                    'Date:10/07/2020, Name:Bhaskaran N, Description: To (-) 89Releife code from TaxGenerated by DNF <start> <End>
+                                    'Date:10/07/2020, Name:Bhaskaran N, Description: To (-) 89Releife code from TaxGenerated by DNF <start><End>
                                     sheet.Cells(W, 6) = (dictSum.Item("GrossTax") + dictSum.Item("Surcharge") + dictSum.Item("EducationCess")) - dictSum.Item("Relief89")
                                     sheet.Cells(W, 7) = dtTempSalary.Item(k).Row("NetTax").ToString()
                                     sheet.Cells(W, 8) = dtTempSalary.Item(k).Row("FYearTax").ToString()
