@@ -190,7 +190,7 @@ Public Module CommonModule
     Public dsMainDNFValidation As New DataSet
     Public dtTempPANSalary As DataTable
     Dim strPANs() As Object
-    Public iswizard As Boolean = True
+    Public iswizard As Boolean = False
     'Dim cp As New CheckPAN.VerifyPAN     Ver 8.0.0.3 for rollback in ver 8.0.0.1
     'Ver 7.03-REQ816 end 
     'Ver 7.05-FASTFACTS-584 start
@@ -3766,8 +3766,10 @@ skipSD:
     Public Function NewPanValidation(strPAN As String) As Integer
         Dim oPANValidate As New PANValidate
         blnPANDelegate = False
-        Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/registrationapi/saveEntity", strPAN)
+        'Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/registrationapi/saveEntity", strPAN)
+        Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/foservices/#/pre-login/register", strPAN)
         blnPANDelegate = True
+
         If success Then
             If Not (oPANValidate.oJsonResult.messages(0).desc = "The PAN entered does not exist. Please retry.") Then Return 1 Else Return 0
         Else
