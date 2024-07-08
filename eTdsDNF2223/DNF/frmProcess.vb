@@ -42,7 +42,7 @@ Public Class frmProcess
         frmFileSelection.Show()
         Me.Close()
     End Sub
-    'live
+    'Tds_live
     'Private Sub frmProcess_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
     '    'Ver 7.03-REQ816 start
     '    If dsMain.Tables("SalaryDetails").Columns.Contains("PANValid") = False Then
@@ -316,7 +316,7 @@ Public Class frmProcess
 
     '    Application.DoEvents()
     'End Sub
-    'live
+    'Tds_live
 
     'anuETDS_DNF
     'Private Sub frmProcess_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
@@ -593,7 +593,9 @@ Public Class frmProcess
     '    Application.DoEvents()
     'End Sub
     'anuETDS_DNF
-    'DNF
+
+
+    'DNF_StandAlone_Live
     Private Sub frmProcess_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Ver 7.03-REQ816 start
         If dsMain.Tables("SalaryDetails").Columns.Contains("PANValid") = False Then
@@ -933,7 +935,7 @@ Public Class frmProcess
 
         Application.DoEvents()
     End Sub
-    'DNF
+    'DNF_StandAlone_Live
     Private Sub create_pan()
         Try
             Dim fileName As String = Application.StartupPath & "\traces\pan.txt"

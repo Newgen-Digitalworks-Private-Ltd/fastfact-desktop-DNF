@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("DNF")>
-<Assembly: AssemblyDescription("27-06-2024")>
+<Assembly: AssemblyDescription("08-07-2024")>
 <Assembly: AssemblyCompany("Fast Facts")>
 <Assembly: AssemblyProduct("DNF")>
 <Assembly: AssemblyCopyright("Copyright ©  2021")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("12.0.0.1")>
-<Assembly: AssemblyFileVersion("12.0.0.1")>
+<Assembly: AssemblyVersion("12.0.0.2")>
+<Assembly: AssemblyFileVersion("12.0.0.2")>
