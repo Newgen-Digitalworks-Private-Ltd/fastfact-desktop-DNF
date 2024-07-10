@@ -37,7 +37,7 @@ Module ExcelReporting
         blnFileFailure = False
 
         Call UpdateRates()
-
+        'MsgBox(1)
         Try
 
             Dim filename As String
@@ -73,7 +73,7 @@ Module ExcelReporting
                 newRow("pan") = rowView("pan")
                 DeducteePanTable.Rows.Add(newRow)
             Next
-
+            'MsgBox(2)
             'anu_PanNameindeductee_28Jun24
 
             Dim dt_PanReport As DataTable
@@ -83,6 +83,7 @@ Module ExcelReporting
 
 
             If blnDemoVersion = False Then
+                'MsgBox(3)
 
                 'MessageBox.Show("Licensed", Application.ProductName, MessageBoxButtons.OK)
                 filename = Forms.Application.StartupPath & "\" & TANDeductor &
@@ -110,7 +111,7 @@ Module ExcelReporting
                 If blnNextFile = False Then
                     CreateHashTable()
                 End If
-
+                'MsgBox(4)
                 ' Loop over all sheets.
                 For i As Integer = 1 To ExlWorkbook.Sheets.Count
                     ' Get sheet.
@@ -242,8 +243,8 @@ Module ExcelReporting
                         If Not (InStr("AS", strDeductorType) > 0 And blnIsBookEntry = True And
                                 ((strFinYear = "201213" And (strFileQuarter = "Q2" Or strFileQuarter = "Q3" Or strFileQuarter = "Q4")) _
                                 Or (strFinYear = "201314" And (strFileQuarter = "Q1" Or strFileQuarter = "Q2" Or strFileQuarter = "Q3")))) Then
-                            'Ver 3.02-REQ311 end 
-
+                            ''Ver 3.02-REQ311 end 
+                            'MsgBox(5)
 
                             If blnCheckLateFiling = True Then
                                 Dim strReturnDuedate As String
@@ -319,7 +320,7 @@ Module ExcelReporting
                                 dvLateFiling.RowFilter = ""
                                 dvLateFiling.Dispose()
 
-
+                                'MsgBox(6)
                             End If
                             sheet = ExlWorkbook.Sheets(1)
                             sheet.Activate()
@@ -360,7 +361,7 @@ Module ExcelReporting
                         '    'Ver 7.03-REQ816 start    'Jitendra Started :
                         'anu_ETDSDNF
                     ElseIf sheet.Name = "PAN Verification" And strFinYear >= "201314" Then
-
+                        'MsgBox(7)
                         'Ver 5.05-REQ641-01 end
                         'Dim dtTmpInvalidPAN1 As DataTable
 
@@ -390,7 +391,7 @@ Module ExcelReporting
                                 pannameDictionary.Add(pan, name)
                             End If
                         Next
-
+                        'MsgBox(8)
                         'PAN PAN Name in deductee	PAN Name in Traces	Status
                         sheet.Rows(1).Font.Bold = True
                         'Dim cell As Excel.Range = sheet.Cells(1, 1)
@@ -428,7 +429,7 @@ Module ExcelReporting
                                 If pannameDictionary.ContainsKey(dt_PanReport.Rows(k)("PAN").ToString) Then
                                     nameFromDeducteePanTable = pannameDictionary(dt_PanReport.Rows(k)("PAN").ToString)
                                 End If
-
+                                'MsgBox(9)
                                 'If J = 1 Then
                                 '    sheet.Cell(J, 1) = "PAN"
                                 '    sheet.Cell(J, 2) = "PAN Name in deductee"
@@ -450,6 +451,7 @@ Module ExcelReporting
 
 
                     ElseIf sheet.Name = "Invalid Salary Pans" And strFinYear >= "201314" Then
+                        'MsgBox(10)
 
                         'Ver 5.05-REQ641-01 end
                         'Dim dtTmpInvalidPAN1 As DataTable
@@ -471,7 +473,7 @@ Module ExcelReporting
                             Next
                         End If
                     ElseIf sheet.Name = "TaxComputation&ShortDeduction" And strFinYear >= "201718" Then
-
+                        'MsgBox(11)
                         Dim W As Integer
                         Dim isPenalApplied As Boolean
 
@@ -479,7 +481,7 @@ Module ExcelReporting
                         'isPenalApplied = False
                         W = 3
                         If dtTempSalary.Count > 0 Then
-
+                            'MsgBox(12)
                             For k As Integer = 0 To dtTempSalary.Count - 1
                                 Try
 
@@ -580,7 +582,7 @@ Module ExcelReporting
                 excelFile.Quit()
 
                 Call KillProcess()
-
+                'MsgBox(13)
                 'Ver 3.06-???? start
                 Dim intAction As Integer
                 '0-All,1-PANNameList,2-VerifyLowerrateCert
@@ -679,7 +681,7 @@ Module ExcelReporting
 
                 blnDNFCreationDelegate = True
             End If
-
+            'MsgBox(14)
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             Call KillProcess()

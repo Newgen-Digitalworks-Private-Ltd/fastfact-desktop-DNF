@@ -3,7 +3,7 @@
 Public Class DNFUpgrade
 
     'Const strFinyear As String = "2223"
-    Const strFinyear As String = "2324"
+    Const strFinyear As String = "2425"
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
         End
     End Sub

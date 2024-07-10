@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNF", "DNF.vbproj", "{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Debug|x86.ActiveCfg = Debug|x86
+		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Debug|x86.Build.0 = Debug|x86
+		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Release|x86.ActiveCfg = Release|x86
+		{0FD79705-2BF6-4EB9-B471-669FD9A98BFA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81A581C7-A3B5-416D-BBD5-55854EE22618}
+	EndGlobalSection
+EndGlobal

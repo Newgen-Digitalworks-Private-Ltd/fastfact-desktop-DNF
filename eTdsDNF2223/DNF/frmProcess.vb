@@ -319,283 +319,6 @@ Public Class frmProcess
     'Tds_live
 
     'anuETDS_DNF
-    'Private Sub frmProcess_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
-    '    'Ver 7.03-REQ816 start
-    '    If dsMain.Tables("SalaryDetails").Columns.Contains("PANValid") = False Then
-    '        dsMain.Tables("SalaryDetails").Columns.Add("PANValid")
-    '    End If
-
-    '    'Ver 7.03-REQ816 end
-    '    Application.DoEvents()
-    '    blnFormClose = True
-    '    lblTan.Text = lblTan.Text & " " & TANDeductor
-    '    lblFy.Text = lblFy.Text & " " & Mid(dtBH.Rows(0)(16), 1, 4) & "-" & Mid(dtBH.Rows(0)(16), 5, 4) 'Fin Yr
-    '    lblQ.Text = lblQ.Text & " " & dtBH.Rows(0)(17) 'Period
-    '    lblDedName.Text = lblDedName.Text & " " & dtBH.Rows(0)(18) 'Deductor Name
-    '    lblFormNo.Text = lblFormNo.Text & " " & strFormNo
-
-    '    Dim strPath() As String
-    '    If blnVerifyChallanSkip = False Then
-    '        strPath = strCSIPath.Split("\")
-    '        lblCsiFile.Text = lblCsiFile.Text & strPath(strPath.Length - 1)
-    '    Else
-    '        lblCsiFile.Text = lblCsiFile.Text & " Skipped by user."
-    '    End If
-
-    '    lblchlStatus.Text = lblchlStatus.Text & " Total challan : " & dtCD.Rows.Count
-    '    lblUnmatchchlStatus.Visible = True
-    '    If blnDemoVersion = True Then
-    '        lblUnmatchchlStatus.Enabled = False
-    '    Else
-    '        lblUnmatchchlStatus.Enabled = True
-    '    End If
-
-    '    If intCountOfUnMatched > 0 Then
-    '        lblUnmatchchlStatus.Text = IIf(blnVerifyChallanSkip = True, "", "Unmatched challan : " & intCountOfUnMatched)
-    '    Else
-    '        lblUnmatchchlStatus.Visible = False
-    '    End If
-
-    '    Application.DoEvents()
-    '    pctProcess1.Visible = False
-    '    pctProcess2.Visible = False
-    '    pctProcess4.Visible = False
-    '    pctForeCastCorrect.Visible = False
-    '    pctFileWrong.Visible = False
-    '    pctDNFWrong.Visible = False
-    '    pctFileCorrect.Visible = True
-
-    '    'lblForecasting.Visible = False
-    '    lblDNFStatus.Visible = False
-
-    '    'lblSummary.Visible = False
-    '    lblProbshortDedAmt.Visible = False
-    '    lblProbshortDepAmt.Visible = False
-    '    lblProbIntPay.Visible = False
-    '    pctSummaryCorrect.Visible = False
-
-    '    lblProbshortDedAmt1.Visible = False
-    '    lblProbshortDepAmt1.Visible = False
-    '    lblProbIntPay1.Visible = False
-
-    '    'Ver 2.02-REQ235 start                   
-    '    lblLateFilingFeeText.Visible = False
-    '    lblLateFilingFee.Visible = False
-    '    'Ver 2.02-REQ235 end
-
-
-
-    '    Application.DoEvents()
-    '    If blnVerifyChallanSkip = True Then
-    '        pctChallanWrong.Visible = True
-    '        pctChallanCorrect.Visible = False
-    '    Else
-    '        pctChallanCorrect.Visible = True
-    '        pctChallanWrong.Visible = False
-    '    End If
-    '    '********************************************************TdsPac_PanVerification ChallanWithSalary 
-    '    Application.DoEvents()
-    '    lblPanProcess1.Text = "Status  :"
-    '    lblPanProcess1.Visible = False
-    '    intCntInvalidPan = 0
-    '    If blnVerifyPANSkip = True Then
-    '        pctPANWrong.Visible = True
-    '        pctPANCorrect.Visible = False
-    '        pctProcess3.Visible = False
-    '        lblPanStatus.Text = lblPanStatus.Text & " Skipped by user."
-
-    '    Else
-    '        pctProcess3.Visible = True
-
-    '        Application.DoEvents()
-    '        pctPANWrong.Visible = False
-    '        pctPANCorrect.Visible = False
-
-    '        blnPANDelegate = False
-
-    '        lblPanProcess.Visible = True
-
-    '        Dim Delgt As DoPanValidation
-    '        'Ver 4.042-QC?? start
-    '        'Delgt = AddressOf PANVerificationLatest
-    '        Delgt = AddressOf PanVerification
-    '        'Ver 4.042-QC?? end
-    '        Delgt.Invoke()
-
-    '        Do While blnPANDelegate = False
-    '            Application.DoEvents()
-    '            lblPanProcess.Text = strPanProcess
-    '            lblPanStatus.Text = "Status  : " & strPanStatus
-    '        Loop
-
-
-    '        If blnPANVerification = True Then
-    '            pctPANWrong.Visible = True
-    '            pctPANCorrect.Visible = False
-
-    '            If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
-    '                lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
-    '            Else
-    '                lblPanStatus.Text = "Status  :  PAN verification cancelled."
-    '            End If
-
-    '            'lblPanStatus.Text = "Status  : PAN verification cancelled."
-    '        Else
-    '            pctPANWrong.Visible = False
-    '            pctPANCorrect.Visible = True
-
-    '            If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
-    '                lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
-    '            Else
-    '                lblPanStatus.Text = "Status  :  PAN verification completed."
-    '            End If
-
-    '            'lblPanStatus.Text = "Status  :  PAN verification completed."
-    '        End If
-
-    '        pctProcess3.Visible = False
-    '    End If
-
-    '    lblPanProcess1.Visible = False
-
-    '    If blnPANCount = True Then
-    '        lblPanProcess.Visible = True
-    '    Else
-    '        lblPanProcess.Visible = False
-    '    End If
-
-    '    If intCntInvalidPan > 0 Then
-    '        lblPanProcess1.Visible = True
-    '        lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in ITD."
-    '        If blnDemoVersion = True Then
-    '            lblPanProcess1.Enabled = False
-    '        Else
-    '            lblPanProcess1.Enabled = True
-    '        End If
-    '    Else
-    '        lblPanProcess1.Text = ""
-    '    End If
-
-    '    If intIgnoredPANList > 0 Then
-    '        If File.Exists(strIgnoredPANListFilePath) = True Then
-    '            lblIgnoredPANList.Visible = True
-    '        End If
-
-    '        lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
-    '        If blnDemoVersion = True Then
-    '            lblIgnoredPANList.Enabled = False
-    '        Else
-    '            lblIgnoredPANList.Enabled = True
-    '        End If
-    '    Else
-    '        lblIgnoredPANList.Text = ""
-    '        lblIgnoredPANList.Visible = False
-    '    End If
-
-
-    '    '*************************************************************TdsPac_PanVerification ChallanWithSalary 
-    '    Application.DoEvents()
-    '    If blnInternetConnectionFailed = True Then
-    '        pctPANWrong.Visible = True
-    '    Else
-    '        pctProcess4.Visible = True
-    '    End If
-
-    '    lblForecasting.Visible = True
-    '    lblDNFStatus.Visible = True
-    '    lblDNFStatus.Text = "Status  : Processing.."
-
-    '    Application.DoEvents()
-    '    blnDNFCreationDelegate = False
-    '    blnFileFailure = False
-    '    Dim dlgDnf As DoDNFCreation
-    '    'MessageBox.Show("Check DNF forecast")
-    '    dlgDnf = AddressOf CreateExcelFile
-    '    dlgDnf.BeginInvoke(Nothing, Nothing)
-    '    Do While blnDNFCreationDelegate = False
-    '        Application.DoEvents()
-    '    Loop
-
-    '    'Call CreateExcelFile()
-    '    pctProcess4.Visible = False
-    '    If blnFileFailure = False Then
-    '        lblOpenFile.Visible = True
-    '        lblOpenFolder.Visible = True
-    '        lblForecasting.Visible = True
-    '        lblDNFStatus.Visible = True
-    '        lblDNFStatus.Text = "Status : DNF File Generated."
-
-    '        pctForeCastCorrect.Visible = True
-    '        pctDNFWrong.Visible = False
-    '        lblProbshortDedAmt.Visible = True
-    '        lblProbshortDepAmt.Visible = True
-    '        lblProbIntPay.Visible = True
-    '        pctSummaryCorrect.Visible = True
-
-    '        lblProbshortDedAmt1.Visible = True
-    '        lblProbshortDepAmt1.Visible = True
-    '        lblProbIntPay1.Visible = True
-
-    '        lblProbshortDedAmt1.Text = strProbshortDedAmt
-    '        lblProbIntPay1.Text = strProbIntPay
-    '        lblProbshortDepAmt1.Text = strProbshortDepAmt
-
-    '        'Ver 2.02-REQ235 start
-    '        If blnCheckLateFiling = True Then
-    '            lblLateFilingFeeText.Visible = True
-    '            lblLateFilingFee.Visible = True
-    '            lblLateFilingFee.Text = Convert.ToString(dblBalanceLateFilingFee)
-    '        Else
-    '            lblLateFilingFee.Text = ""
-    '            lblLateFilingFeeText.Visible = False
-    '            lblLateFilingFee.Visible = False
-    '        End If
-    '        'Ver 2.02-REQ235 end
-
-    '        'Ver 6.00-REQ660 start
-    '        If Convert.ToDouble(strProbshortDedAmt) > 0 Or Convert.ToDouble(strProbIntPay) > 0 Or Convert.ToDouble(strProbshortDepAmt) > 0 Or dblBalanceLateFilingFee > 0 Then
-    '            btnePayment.Visible = True
-    '        Else
-    '            btnePayment.Visible = False
-    '        End If
-    '        'Ver 6.00-REQ660 end
-
-    '    Else
-    '        lblDNFStatus.Text = "Status : DNF Creation Failed."
-    '        lblOpenFile.Visible = False
-    '        lblOpenFolder.Visible = False
-    '        pctForeCastCorrect.Visible = False
-    '        pctDNFWrong.Visible = True
-    '        lblProbshortDedAmt.Visible = False
-    '        lblProbshortDepAmt.Visible = False
-    '        lblProbIntPay.Visible = False
-    '        pctSummaryCorrect.Visible = False
-    '        lblProbshortDedAmt1.Visible = False
-    '        lblProbshortDepAmt1.Visible = False
-    '        lblProbIntPay1.Visible = False
-
-    '        'Ver 2.02-REQ235 start           
-    '        lblLateFilingFee.Text = ""
-    '        lblLateFilingFeeText.Visible = False
-    '        lblLateFilingFee.Visible = False
-    '        'Ver 2.02-REQ235 end
-
-    '    End If
-
-    '    'Ver 3.0.7-REQ417 start
-    '    ' btnNext.Enabled = True
-    '    If blnChkDNFIntegrate = False Then
-    '        btnNext.Visible = True
-    '        btnNext.Enabled = True
-    '    End If
-    '    'Ver 3.0.7-REQ417 end 
-
-    '    Application.DoEvents()
-    'End Sub
-    'anuETDS_DNF
-
-
-    'DNF_StandAlone_Live
     Private Sub frmProcess_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         'Ver 7.03-REQ816 start
         If dsMain.Tables("SalaryDetails").Columns.Contains("PANValid") = False Then
@@ -670,7 +393,7 @@ Public Class frmProcess
             pctChallanCorrect.Visible = True
             pctChallanWrong.Visible = False
         End If
-
+        '********************************************************TdsPac_PanVerification ChallanWithSalary 
         Application.DoEvents()
         lblPanProcess1.Text = "Status  :"
         lblPanProcess1.Visible = False
@@ -680,29 +403,7 @@ Public Class frmProcess
             pctPANCorrect.Visible = False
             pctProcess3.Visible = False
             lblPanStatus.Text = lblPanStatus.Text & " Skipped by user."
-            'Ver 4.042-QC?? start
-            ''Ver 4.041-QC?? start
-            Dim filename As String = ""
-            If blnDemoVersion = False Then
-                'Dim frm As New frmTracesUtility
 
-                'If File.Exists(Application.StartupPath & "\TRACES.exe") = True Then
-                'filename = Application.StartupPath & "\" & TANDeductor &
-                '            "_" & dtBH.Rows(0)(4) & "_" & dtBH.Rows(0)(17) & "_" & dtBH.Rows(0)(16) & "_" & Today.Day & Today.Month & Today.Year & ".xls"
-                'frm.lblpath.Text = filename
-                'frm.ShowDialog()
-                'File.Copy(Application.StartupPath & "\Default-Notice-Forecaster.sys", filename, True)
-                'strDNFExcelFile = filename
-                '    Call CallProcessAndWait(Application.StartupPath & "\TRACES.exe", """~" & strFilePath & "~" & strDNFExcelFile & "~~~~~" & TANDeductor & "~DNF~""")
-                'Else
-                '    MessageBox.Show("TRACES.exe is not found in application folder.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                '    Exit Sub
-                'End If
-                'ReadExcelPANVerification(strDNFExcelFile)
-                ''ReadExcelPANVerification("C:\Gajanan\TFS New\FFCS Projects\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1516\DNF\bin\Debug\MUML06324D_26Q_Q2_201516_13102015.xls")
-            End If
-            ''Ver 4.041-QC?? end
-            'Ver 4.042-QC?? end
         Else
             pctProcess3.Visible = True
 
@@ -717,43 +418,18 @@ Public Class frmProcess
             Dim Delgt As DoPanValidation
             'Ver 4.042-QC?? start
             'Delgt = AddressOf PANVerificationLatest
-            create_pan()
-            'readcsv()
-            'lblPanProcess.Text = strPanProcess
-            'lblPanStatus.Text = "Status  : " & strPanStatus
+            Delgt = AddressOf PanVerification
+            'Ver 4.042-QC?? end
+            Delgt.Invoke()
+
+            Do While blnPANDelegate = False
+                Application.DoEvents()
+                lblPanProcess.Text = strPanProcess
+                lblPanStatus.Text = "Status  : " & strPanStatus
+            Loop
 
 
-
-            'Dim filename As String
-            'If File.Exists(Application.StartupPath & "\TRACES.exe") = True Then
-            '    filename = Application.StartupPath & "\" & TANDeductor &
-            '                "_" & dtBH.Rows(0)(4) & "_" & dtBH.Rows(0)(17) & "_" & dtBH.Rows(0)(16) & "_" & Today.Day & Today.Month & Today.Year & ".xls"
-            '    frm.lblpath.Text = filename
-            '    frm.ShowDialog()
-            '    File.Copy(Application.StartupPath & "\Default-Notice-Forecaster.sys", filename, True)
-            '    strDNFExcelFile = filename
-            '    Call CallProcessAndWait(Application.StartupPath & "\TRACES.exe", """~" & strFilePath & "~" & strDNFExcelFile & "~~~~~" & TANDeductor & "~DNF~""")
-            'Else
-            '    MessageBox.Show("TRACES.exe is not found in application folder.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            '    Exit Sub
-            'End If
-            'ReadExcelPANVerification(strDNFExcelFile)
-            ''ReadExcelPANVerification("C:\Gajanan\TFS New\FFCS Projects\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1516\DNF\bin\Debug\MUML06324D_26Q_Q2_201516_13102015.xls")
-
-            'Delgt = AddressOf PanVerification
-            ''Ver 4.042-QC?? end
-            'Delgt.Invoke()
-
-            'Do While blnPANDelegate = False
-            '    Application.DoEvents()
-            '    lblPanProcess.Text = strPanProcess
-            '    lblPanStatus.Text = "Status  : " & strPanStatus
-
-            'Loop
-
-
-            If blnPANVerification = False Then
-
+            If blnPANVerification = True Then
                 pctPANWrong.Visible = True
                 pctPANCorrect.Visible = False
 
@@ -763,34 +439,16 @@ Public Class frmProcess
                     lblPanStatus.Text = "Status  :  PAN verification cancelled."
                 End If
 
-                lblPanStatus.Text = "Status  : PAN verification cancelled."
+                'lblPanStatus.Text = "Status  : PAN verification cancelled."
             Else
-                'pctPANWrong.Visible = False
-                'pctPANCorrect.Visible = True
+                pctPANWrong.Visible = False
+                pctPANCorrect.Visible = True
 
-                'If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
-                '    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
-                'Else
-                If actCntInvalidPan > 0 Then
-                    lblPanProcess1.Text = ""
-                    lblPanProcess.Visible = True
-                    lblPanProcess.Text = actCntInvalidPan & " PAN's Verification Completed."
-                End If
-                If intCntInvalidPan > 0 Then
-                    lblPanProcess1.Visible = True
-                    lblPanProcess.Text = ""
-                    lblPanProcess.Visible = False
-                    lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in Traces."
-                    If blnDemoVersion = True Then
-                        lblPanProcess1.Enabled = False
-                    Else
-                        lblPanProcess1.Enabled = True
-                    End If
+                If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+                    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
                 Else
-                    lblPanProcess1.Text = ""
+                    lblPanStatus.Text = "Status  :  PAN verification completed."
                 End If
-                lblPanStatus.Text = "Status  :  PAN verification completed."
-                'End If
 
                 'lblPanStatus.Text = "Status  :  PAN verification completed."
             End If
@@ -798,18 +456,17 @@ Public Class frmProcess
             pctProcess3.Visible = False
         End If
 
-        'lblPanProcess1.Visible = False
+        lblPanProcess1.Visible = False
 
-        'If blnPANCount = True Then
-        '    lblPanProcess.Visible = True
-        'Else
-        '    lblPanProcess.Visible = False
-        'End If
+        If blnPANCount = True Then
+            lblPanProcess.Visible = True
+        Else
+            lblPanProcess.Visible = False
+        End If
 
         If intCntInvalidPan > 0 Then
             lblPanProcess1.Visible = True
-            lblPanProcess.Visible = False
-            lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in Traces."
+            lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in ITD."
             If blnDemoVersion = True Then
                 lblPanProcess1.Enabled = False
             Else
@@ -817,25 +474,26 @@ Public Class frmProcess
             End If
         Else
             lblPanProcess1.Text = ""
-            lblPanProcess1.Visible = False
         End If
 
-        'If intIgnoredPANList > 0 Then
-        '    If File.Exists(strIgnoredPANListFilePath) = True Then
-        '        lblIgnoredPANList.Visible = True
-        '    End If
+        If intIgnoredPANList > 0 Then
+            If File.Exists(strIgnoredPANListFilePath) = True Then
+                lblIgnoredPANList.Visible = True
+            End If
 
-        '    lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
-        '    If blnDemoVersion = True Then
-        '        lblIgnoredPANList.Enabled = False
-        '    Else
-        '        lblIgnoredPANList.Enabled = True
-        '    End If
-        'Else
-        '    lblIgnoredPANList.Text = ""
-        '    lblIgnoredPANList.Visible = False
-        'End If
+            lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
+            If blnDemoVersion = True Then
+                lblIgnoredPANList.Enabled = False
+            Else
+                lblIgnoredPANList.Enabled = True
+            End If
+        Else
+            lblIgnoredPANList.Text = ""
+            lblIgnoredPANList.Visible = False
+        End If
 
+
+        '*************************************************************TdsPac_PanVerification ChallanWithSalary 
         Application.DoEvents()
         If blnInternetConnectionFailed = True Then
             pctPANWrong.Visible = True
@@ -861,7 +519,6 @@ Public Class frmProcess
         'Call CreateExcelFile()
         pctProcess4.Visible = False
         If blnFileFailure = False Then
-
             lblOpenFile.Visible = True
             lblOpenFolder.Visible = True
             lblForecasting.Visible = True
@@ -935,6 +592,349 @@ Public Class frmProcess
 
         Application.DoEvents()
     End Sub
+    'anuETDS_DNF
+
+
+    'DNF_StandAlone_Live
+    'Private Sub frmProcess_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+    '    'Ver 7.03-REQ816 start
+    '    If dsMain.Tables("SalaryDetails").Columns.Contains("PANValid") = False Then
+    '        dsMain.Tables("SalaryDetails").Columns.Add("PANValid")
+    '    End If
+
+    '    'Ver 7.03-REQ816 end
+    '    Application.DoEvents()
+    '    blnFormClose = True
+    '    lblTan.Text = lblTan.Text & " " & TANDeductor
+    '    lblFy.Text = lblFy.Text & " " & Mid(dtBH.Rows(0)(16), 1, 4) & "-" & Mid(dtBH.Rows(0)(16), 5, 4) 'Fin Yr
+    '    lblQ.Text = lblQ.Text & " " & dtBH.Rows(0)(17) 'Period
+    '    lblDedName.Text = lblDedName.Text & " " & dtBH.Rows(0)(18) 'Deductor Name
+    '    lblFormNo.Text = lblFormNo.Text & " " & strFormNo
+
+    '    Dim strPath() As String
+    '    If blnVerifyChallanSkip = False Then
+    '        strPath = strCSIPath.Split("\")
+    '        lblCsiFile.Text = lblCsiFile.Text & strPath(strPath.Length - 1)
+    '    Else
+    '        lblCsiFile.Text = lblCsiFile.Text & " Skipped by user."
+    '    End If
+
+    '    lblchlStatus.Text = lblchlStatus.Text & " Total challan : " & dtCD.Rows.Count
+    '    lblUnmatchchlStatus.Visible = True
+    '    If blnDemoVersion = True Then
+    '        lblUnmatchchlStatus.Enabled = False
+    '    Else
+    '        lblUnmatchchlStatus.Enabled = True
+    '    End If
+
+    '    If intCountOfUnMatched > 0 Then
+    '        lblUnmatchchlStatus.Text = IIf(blnVerifyChallanSkip = True, "", "Unmatched challan : " & intCountOfUnMatched)
+    '    Else
+    '        lblUnmatchchlStatus.Visible = False
+    '    End If
+
+    '    Application.DoEvents()
+    '    pctProcess1.Visible = False
+    '    pctProcess2.Visible = False
+    '    pctProcess4.Visible = False
+    '    pctForeCastCorrect.Visible = False
+    '    pctFileWrong.Visible = False
+    '    pctDNFWrong.Visible = False
+    '    pctFileCorrect.Visible = True
+
+    '    'lblForecasting.Visible = False
+    '    lblDNFStatus.Visible = False
+
+    '    'lblSummary.Visible = False
+    '    lblProbshortDedAmt.Visible = False
+    '    lblProbshortDepAmt.Visible = False
+    '    lblProbIntPay.Visible = False
+    '    pctSummaryCorrect.Visible = False
+
+    '    lblProbshortDedAmt1.Visible = False
+    '    lblProbshortDepAmt1.Visible = False
+    '    lblProbIntPay1.Visible = False
+
+    '    'Ver 2.02-REQ235 start                   
+    '    lblLateFilingFeeText.Visible = False
+    '    lblLateFilingFee.Visible = False
+    '    'Ver 2.02-REQ235 end
+
+
+
+    '    Application.DoEvents()
+    '    If blnVerifyChallanSkip = True Then
+    '        pctChallanWrong.Visible = True
+    '        pctChallanCorrect.Visible = False
+    '    Else
+    '        pctChallanCorrect.Visible = True
+    '        pctChallanWrong.Visible = False
+    '    End If
+
+    '    Application.DoEvents()
+    '    lblPanProcess1.Text = "Status  :"
+    '    lblPanProcess1.Visible = False
+    '    intCntInvalidPan = 0
+    '    If blnVerifyPANSkip = True Then
+    '        pctPANWrong.Visible = True
+    '        pctPANCorrect.Visible = False
+    '        pctProcess3.Visible = False
+    '        lblPanStatus.Text = lblPanStatus.Text & " Skipped by user."
+    '        'Ver 4.042-QC?? start
+    '        ''Ver 4.041-QC?? start
+    '        Dim filename As String = ""
+    '        If blnDemoVersion = False Then
+    '            'Dim frm As New frmTracesUtility
+
+    '            'If File.Exists(Application.StartupPath & "\TRACES.exe") = True Then
+    '            'filename = Application.StartupPath & "\" & TANDeductor &
+    '            '            "_" & dtBH.Rows(0)(4) & "_" & dtBH.Rows(0)(17) & "_" & dtBH.Rows(0)(16) & "_" & Today.Day & Today.Month & Today.Year & ".xls"
+    '            'frm.lblpath.Text = filename
+    '            'frm.ShowDialog()
+    '            'File.Copy(Application.StartupPath & "\Default-Notice-Forecaster.sys", filename, True)
+    '            'strDNFExcelFile = filename
+    '            '    Call CallProcessAndWait(Application.StartupPath & "\TRACES.exe", """~" & strFilePath & "~" & strDNFExcelFile & "~~~~~" & TANDeductor & "~DNF~""")
+    '            'Else
+    '            '    MessageBox.Show("TRACES.exe is not found in application folder.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '            '    Exit Sub
+    '            'End If
+    '            'ReadExcelPANVerification(strDNFExcelFile)
+    '            ''ReadExcelPANVerification("C:\Gajanan\TFS New\FFCS Projects\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1516\DNF\bin\Debug\MUML06324D_26Q_Q2_201516_13102015.xls")
+    '        End If
+    '        ''Ver 4.041-QC?? end
+    '        'Ver 4.042-QC?? end
+    '    Else
+    '        pctProcess3.Visible = True
+
+    '        Application.DoEvents()
+    '        pctPANWrong.Visible = False
+    '        pctPANCorrect.Visible = False
+
+    '        blnPANDelegate = False
+
+    '        lblPanProcess.Visible = True
+
+    '        Dim Delgt As DoPanValidation
+    '        'Ver 4.042-QC?? start
+    '        'Delgt = AddressOf PANVerificationLatest
+    '        create_pan()
+    '        'readcsv()
+    '        'lblPanProcess.Text = strPanProcess
+    '        'lblPanStatus.Text = "Status  : " & strPanStatus
+
+
+
+    '        'Dim filename As String
+    '        'If File.Exists(Application.StartupPath & "\TRACES.exe") = True Then
+    '        '    filename = Application.StartupPath & "\" & TANDeductor &
+    '        '                "_" & dtBH.Rows(0)(4) & "_" & dtBH.Rows(0)(17) & "_" & dtBH.Rows(0)(16) & "_" & Today.Day & Today.Month & Today.Year & ".xls"
+    '        '    frm.lblpath.Text = filename
+    '        '    frm.ShowDialog()
+    '        '    File.Copy(Application.StartupPath & "\Default-Notice-Forecaster.sys", filename, True)
+    '        '    strDNFExcelFile = filename
+    '        '    Call CallProcessAndWait(Application.StartupPath & "\TRACES.exe", """~" & strFilePath & "~" & strDNFExcelFile & "~~~~~" & TANDeductor & "~DNF~""")
+    '        'Else
+    '        '    MessageBox.Show("TRACES.exe is not found in application folder.", "DNF", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        '    Exit Sub
+    '        'End If
+    '        'ReadExcelPANVerification(strDNFExcelFile)
+    '        ''ReadExcelPANVerification("C:\Gajanan\TFS New\FFCS Projects\DotNet Projects\Window Based\eTdsDNF\DNF\eTdsDNF1516\DNF\bin\Debug\MUML06324D_26Q_Q2_201516_13102015.xls")
+
+    '        'Delgt = AddressOf PanVerification
+    '        ''Ver 4.042-QC?? end
+    '        'Delgt.Invoke()
+
+    '        'Do While blnPANDelegate = False
+    '        '    Application.DoEvents()
+    '        '    lblPanProcess.Text = strPanProcess
+    '        '    lblPanStatus.Text = "Status  : " & strPanStatus
+
+    '        'Loop
+
+
+    '        If blnPANVerification = False Then
+
+    '            pctPANWrong.Visible = True
+    '            pctPANCorrect.Visible = False
+
+    '            If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+    '                lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
+    '            Else
+    '                lblPanStatus.Text = "Status  :  PAN verification cancelled."
+    '            End If
+
+    '            lblPanStatus.Text = "Status  : PAN verification cancelled."
+    '        Else
+    '            'pctPANWrong.Visible = False
+    '            'pctPANCorrect.Visible = True
+
+    '            'If blnInternetConnectionFailed = True Then 'Added for Ver 8.0.0.4 for check internet is not active status
+    '            '    lblPanStatus.Text = "Status  :  Connection failed please re-run DNF again!"
+    '            'Else
+    '            If actCntInvalidPan > 0 Then
+    '                lblPanProcess1.Text = ""
+    '                lblPanProcess.Visible = True
+    '                lblPanProcess.Text = actCntInvalidPan & " PAN's Verification Completed."
+    '            End If
+    '            If intCntInvalidPan > 0 Then
+    '                lblPanProcess1.Visible = True
+    '                lblPanProcess.Text = ""
+    '                lblPanProcess.Visible = False
+    '                lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in Traces."
+    '                If blnDemoVersion = True Then
+    '                    lblPanProcess1.Enabled = False
+    '                Else
+    '                    lblPanProcess1.Enabled = True
+    '                End If
+    '            Else
+    '                lblPanProcess1.Text = ""
+    '            End If
+    '            lblPanStatus.Text = "Status  :  PAN verification completed."
+    '            'End If
+
+    '            'lblPanStatus.Text = "Status  :  PAN verification completed."
+    '        End If
+
+    '        pctProcess3.Visible = False
+    '    End If
+
+    '    'lblPanProcess1.Visible = False
+
+    '    'If blnPANCount = True Then
+    '    '    lblPanProcess.Visible = True
+    '    'Else
+    '    '    lblPanProcess.Visible = False
+    '    'End If
+
+    '    If intCntInvalidPan > 0 Then
+    '        lblPanProcess1.Visible = True
+    '        lblPanProcess.Visible = False
+    '        lblPanProcess1.Text = intCntInvalidPan & " PAN's not found in Traces."
+    '        If blnDemoVersion = True Then
+    '            lblPanProcess1.Enabled = False
+    '        Else
+    '            lblPanProcess1.Enabled = True
+    '        End If
+    '    Else
+    '        lblPanProcess1.Text = ""
+    '        lblPanProcess1.Visible = False
+    '    End If
+
+    '    'If intIgnoredPANList > 0 Then
+    '    '    If File.Exists(strIgnoredPANListFilePath) = True Then
+    '    '        lblIgnoredPANList.Visible = True
+    '    '    End If
+
+    '    '    lblIgnoredPANList.Text = intIgnoredPANList & " PAN Ignored"
+    '    '    If blnDemoVersion = True Then
+    '    '        lblIgnoredPANList.Enabled = False
+    '    '    Else
+    '    '        lblIgnoredPANList.Enabled = True
+    '    '    End If
+    '    'Else
+    '    '    lblIgnoredPANList.Text = ""
+    '    '    lblIgnoredPANList.Visible = False
+    '    'End If
+
+    '    Application.DoEvents()
+    '    If blnInternetConnectionFailed = True Then
+    '        pctPANWrong.Visible = True
+    '    Else
+    '        pctProcess4.Visible = True
+    '    End If
+
+    '    lblForecasting.Visible = True
+    '    lblDNFStatus.Visible = True
+    '    lblDNFStatus.Text = "Status  : Processing.."
+
+    '    Application.DoEvents()
+    '    blnDNFCreationDelegate = False
+    '    blnFileFailure = False
+    '    Dim dlgDnf As DoDNFCreation
+    '    'MessageBox.Show("Check DNF forecast")
+    '    dlgDnf = AddressOf CreateExcelFile
+    '    dlgDnf.BeginInvoke(Nothing, Nothing)
+    '    Do While blnDNFCreationDelegate = False
+    '        Application.DoEvents()
+    '    Loop
+
+    '    'Call CreateExcelFile()
+    '    pctProcess4.Visible = False
+    '    If blnFileFailure = False Then
+
+    '        lblOpenFile.Visible = True
+    '        lblOpenFolder.Visible = True
+    '        lblForecasting.Visible = True
+    '        lblDNFStatus.Visible = True
+    '        lblDNFStatus.Text = "Status : DNF File Generated."
+
+    '        pctForeCastCorrect.Visible = True
+    '        pctDNFWrong.Visible = False
+    '        lblProbshortDedAmt.Visible = True
+    '        lblProbshortDepAmt.Visible = True
+    '        lblProbIntPay.Visible = True
+    '        pctSummaryCorrect.Visible = True
+
+    '        lblProbshortDedAmt1.Visible = True
+    '        lblProbshortDepAmt1.Visible = True
+    '        lblProbIntPay1.Visible = True
+
+    '        lblProbshortDedAmt1.Text = strProbshortDedAmt
+    '        lblProbIntPay1.Text = strProbIntPay
+    '        lblProbshortDepAmt1.Text = strProbshortDepAmt
+
+    '        'Ver 2.02-REQ235 start
+    '        If blnCheckLateFiling = True Then
+    '            lblLateFilingFeeText.Visible = True
+    '            lblLateFilingFee.Visible = True
+    '            lblLateFilingFee.Text = Convert.ToString(dblBalanceLateFilingFee)
+    '        Else
+    '            lblLateFilingFee.Text = ""
+    '            lblLateFilingFeeText.Visible = False
+    '            lblLateFilingFee.Visible = False
+    '        End If
+    '        'Ver 2.02-REQ235 end
+
+    '        'Ver 6.00-REQ660 start
+    '        If Convert.ToDouble(strProbshortDedAmt) > 0 Or Convert.ToDouble(strProbIntPay) > 0 Or Convert.ToDouble(strProbshortDepAmt) > 0 Or dblBalanceLateFilingFee > 0 Then
+    '            btnePayment.Visible = True
+    '        Else
+    '            btnePayment.Visible = False
+    '        End If
+    '        'Ver 6.00-REQ660 end
+
+    '    Else
+    '        lblDNFStatus.Text = "Status : DNF Creation Failed."
+    '        lblOpenFile.Visible = False
+    '        lblOpenFolder.Visible = False
+    '        pctForeCastCorrect.Visible = False
+    '        pctDNFWrong.Visible = True
+    '        lblProbshortDedAmt.Visible = False
+    '        lblProbshortDepAmt.Visible = False
+    '        lblProbIntPay.Visible = False
+    '        pctSummaryCorrect.Visible = False
+    '        lblProbshortDedAmt1.Visible = False
+    '        lblProbshortDepAmt1.Visible = False
+    '        lblProbIntPay1.Visible = False
+
+    '        'Ver 2.02-REQ235 start           
+    '        lblLateFilingFee.Text = ""
+    '        lblLateFilingFeeText.Visible = False
+    '        lblLateFilingFee.Visible = False
+    '        'Ver 2.02-REQ235 end
+
+    '    End If
+
+    '    'Ver 3.0.7-REQ417 start
+    '    ' btnNext.Enabled = True
+    '    If blnChkDNFIntegrate = False Then
+    '        btnNext.Visible = True
+    '        btnNext.Enabled = True
+    '    End If
+    '    'Ver 3.0.7-REQ417 end 
+
+    '    Application.DoEvents()
+    'End Sub
     'DNF_StandAlone_Live
     Private Sub create_pan()
         Try
