@@ -1386,11 +1386,18 @@ contn:
 
             'StrErr = 2
             For i = 0 To intRateMasterCount - 1
+
                 If strFormNo = "26Q" Or strFormNo = "27EQ" Or strFormNo = "27Q" Then
                     dtTempView.RowFilter = "DeducteeStatus = '" & dtRateMaster.Rows(i)("DeducteeStatus") &
                                            "' And Section = '" & dtRateMaster.Rows(i)("Section") & "'"
                 End If
                 For j = 0 To dtTempView.Count - 1
+                    If dtRateMaster.Rows(i)("Section") = "94H" Then
+                        'MsgBox("anu")
+                    End If
+                    If (j = 4539) Then
+                        'MsgBox("anu")
+                    End If
                     If dtTempView.Item(j)("DateDeducted").ToString = "" Then Continue For
                     Dim LFlag As String = dtTempView.Item(j)("Remark1").ToString
                     Dim Ddate As Date = Format(Date.Parse(dtTempView.Item(j)("DateDeducted").ToString.Substring(0, 2) & "-" &
@@ -1461,7 +1468,16 @@ contn:
                                     End If
                                     Array.Resize(strRate, 0)
                                 Else
-                                    dtTempView.Item(j)("PrescribedRate") = IIf(dtTempView.Item(j)("Rate") < 5, 5, dtRateMaster.Rows(i)("Rate") * 2)
+
+                                    Dim rateMasterString As String = dtRateMaster.Rows(i)("Rate").ToString()
+                                    Dim rateMasterFirstPart As String = rateMasterString.Split(","c)(0)
+                                    Dim rateMasterValue As Decimal = Convert.ToDecimal(rateMasterFirstPart)
+                                    'Dim tempViewValue As Decimal = Convert.ToDecimal(dtTempView.Item(j)("Rate"))
+                                    'Dim result As Decimal = IIf(tempViewValue < 5, 5, rateMasterValue * 2)
+
+                                    dtTempView.Item(j)("PrescribedRate") = IIf(dtTempView.Item(j)("Rate") < 5, 5, rateMasterValue * 2)
+
+                                    'dtTempView.Item(j)("PrescribedRate") = IIf(dtTempView.Item(j)("Rate") < 5, 5, dtRateMaster.Rows(i)("Rate") * 2)
                                 End If
                             End If
                         Else
@@ -3330,7 +3346,7 @@ takeAction:
                         isValid = False
                     ElseIf intPANStatus = 2 Then
                         isValid = False
-                        Exit For
+                        'Exit For
                         Dim intError As Integer = 0
                         Dim intIgnore As Integer = (1 / intError)
                         'Ver 8.002 - Id '0129703' 12/07/19  Start    
@@ -3484,7 +3500,7 @@ takeAction:
                             isValid = False
                         ElseIf intPANStatus = 2 Then
                             isValid = False
-                            Exit For
+                            'Exit For
                             Dim intError As Integer = 0
                             Dim intIgnore As Integer = (1 / intError)
                             'Ver 8.002 - Id '0129703' 12/07/19  Start    
