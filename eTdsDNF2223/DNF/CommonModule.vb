@@ -3782,8 +3782,8 @@ skipSD:
     Public Function NewPanValidation(strPAN As String) As Integer
         Dim oPANValidate As New PANValidate
         blnPANDelegate = False
-        'Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/registrationapi/saveEntity", strPAN)
-        Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/foservices/#/pre-login/register", strPAN)
+        Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/registrationapi/saveEntity", strPAN)
+        'Dim success As Boolean = oPANValidate.Validate("https://eportal.incometax.gov.in/iec/foservices/#/pre-login/register", strPAN)
         blnPANDelegate = True
 
         If success Then
